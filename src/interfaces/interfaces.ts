@@ -21,3 +21,21 @@ export interface Asset {
   vwap24Hr:	string
   explorer:	string
 }
+
+export interface AssetHistory {
+  circulatingSupply: string
+  date: string
+  priceUsd: string
+  time: number
+}
+
+export interface Market {
+  baseId: string
+  baseSymbol: string
+  exchangeId: string
+  priceUsd: string
+  quoteId: string
+  quoteSymbol: string
+  volumePercent: string
+  volumeUsd24Hr: string
+}

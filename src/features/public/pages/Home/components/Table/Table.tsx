@@ -1,10 +1,9 @@
 import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ActionButton } from './ActionButton'
-import { Td } from './Td'
+import { Th, Td } from '@/features/public/components'
 import { Asset } from '@/interfaces/interfaces'
 import { formatter } from '@/features/utils/formatter'
-import { Th } from './Th'
 
 interface Props {
   assets: Asset[]
@@ -119,7 +118,7 @@ export const Table:FC<Props> = ({ assets }) => {
                   <div className="inline-block align-middle ml-2">
                     <Link
                       className="block hover:underline text-orange-600"
-                      to={ `coin/${asset.id}` }
+                      to={ `coins/${asset.id}` }
                     >
                       { asset.name }
                     </Link>

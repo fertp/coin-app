@@ -16,7 +16,7 @@ const aligns = {
 export const Td:FC<Props> = ({ children, className='', align='right' }) => {
 
   return (
-    <td className={`py-2 sm:py-1 px-2 ${aligns[align]} ${className}`} >
+    <td className={`py-2 sm:py-1 px-2 text-sm font-light ${aligns[align]} ${className}`} >
       { children }
     </td>
   )
