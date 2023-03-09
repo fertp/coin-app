@@ -1,5 +1,5 @@
 import { Td, Th } from "@/features/public/components";
-import { formatter } from "@/features/utils/formatter";
+import { formatter } from "../../../utils/formatter";
 import { Market } from "@/interfaces/interfaces";
 import { FC } from "react";
 

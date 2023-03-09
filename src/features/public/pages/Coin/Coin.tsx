@@ -1,52 +1,23 @@
-import { FC, useEffect, useState } from "react";
-import { Button, Container, Loader } from "../../components";
+import { FC } from "react";
+import { Container, Loader } from "../../components";
 import { useParams } from "react-router-dom";
-import { Asset, AssetHistory, Market } from "@/interfaces/interfaces";
-import { getAssetById, getAssetHistory, getMarkets } from "../../services/api";
 import { Stats, Title, Chart, MarketsTable } from "./components";
-
-interface AssetData {
-  asset: Asset
-  history: AssetHistory[]
-  markets: Market[]
-}
+import { useGetAssetByIdQuery, useGetAssetHistoryQuery, useGetAssetMarketsQuery } from "@/services/api";
 
 export const Coin:FC = () => {
 
   const { id } = useParams()
-  const [ isLoading, setIsLoading ] = useState<boolean>(true)
-  const [ assetData, setAssetData ] = useState<AssetData>()
 
-  useEffect(() => {
+  if (id === undefined) return (
+    <Loader color='#ea580c' className='mt-12 mx-auto' />
+  )
 
-    if ( id === undefined ) return
+  const { data: asset, error: assetError, isLoading: isAssetLoading } = useGetAssetByIdQuery(id)
+  const { data: history, error: historyError, isLoading: isHistoryLoading } = useGetAssetHistoryQuery({ id, time: '1d' })
+  const { data: markets, error: marketsError, isLoading: isMarketsLoading } = useGetAssetMarketsQuery({ id, limit: 10 })
 
-    const abortController = new AbortController()
-    const { signal } = abortController
 
-    const fetchAsset = async () => {
-      try {
-        const [ asset, history, markets ] =  await Promise.all([ 
-          getAssetById({ id, signal }),
-          getAssetHistory({ id, signal }),
-          getMarkets({ id, signal })
-        ])
-        setAssetData({ asset, history, markets })
-        setIsLoading(false)
-      }
-      catch (error) {
-        console.log(error)
-      }
-    }
-    fetchAsset()
-
-    return () => {
-      abortController.abort()
-    }
-
-  }, [])
-
-  if ( isLoading ) {
+  if ( isAssetLoading ) {
     return <Loader color='#ea580c' className='mt-12 mx-auto' />
   }
 
@@ -54,18 +25,18 @@ export const Coin:FC = () => {
     <Container>
       <section className="px-4 sm:px-8 lg:px-0">
         <div className="flex flex-col md:flex-row flex-wrap gap-8 lg:gap-20 md:items-center">
-          <Title asset={assetData?.asset} />
+          <Title asset={asset?.data} />
 
           <Stats 
-            asset={assetData?.asset} 
-            history={assetData?.history}  
+            asset={asset?.data} 
+            history={history?.data}  
           />
         </div>
 
-        <Chart history={assetData?.history} />
+        <Chart history={history?.data} />
       </section>
 
-      <MarketsTable markets={assetData?.markets} />
+      <MarketsTable markets={markets?.data} />
     </Container>
   )
 }

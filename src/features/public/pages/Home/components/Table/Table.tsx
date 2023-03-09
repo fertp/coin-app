@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import { ActionButton } from './ActionButton'
 import { Th, Td } from '@/features/public/components'
 import { Asset } from '@/interfaces/interfaces'
-import { formatter } from '@/features/utils/formatter'
+import { formatter } from '../../../../utils/formatter'
 
 interface Props {
   assets: Asset[]
 }
-
 
 export const Table:FC<Props> = ({ assets }) => {
 

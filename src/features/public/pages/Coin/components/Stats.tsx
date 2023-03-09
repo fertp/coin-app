@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Asset, AssetHistory } from '@/interfaces/interfaces'
-import { formatter } from '@/features/utils/formatter'
+import { formatter } from '../../../utils/formatter'
 
 interface Props {
   asset?: Asset

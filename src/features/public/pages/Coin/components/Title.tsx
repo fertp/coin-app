@@ -1,4 +1,4 @@
-import { formatter } from "@/features/utils/formatter";
+import { formatter } from "../../../utils/formatter";
 import { Asset } from "@/interfaces/interfaces";
 import { FC } from "react";
 

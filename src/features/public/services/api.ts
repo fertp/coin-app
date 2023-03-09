@@ -25,7 +25,6 @@ export const getAssetHistory = ({ id, signal }:{ id: string, signal: AbortSignal
   const now = new Date()
   const end = now.getTime()
   now.setDate(now.getDate() - 1)
-  console.log(now.getDate())
   const start = now.getTime()
 
   return fetch(`${url}/assets/${id}/history?interval=h1&start=${start}&end=${end}`, { signal })
