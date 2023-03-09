@@ -1,12 +1,12 @@
 export const formatter = {
 
-  toUSDollar: ({ value }:{ value: number }) => {
+  toUSDollar: ({ value, fractions=2 }:{ value: number, fractions?: number }) => {
     return Intl
       .NumberFormat('en-Us', {
         style: 'currency',
         currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        minimumFractionDigits: fractions,
+        maximumFractionDigits: fractions
       })
       .format( value )
   },
@@ -32,6 +32,14 @@ export const formatter = {
         maximumFractionDigits: 2
       })
       .format( value / 100 );
+  },
+
+  toCustomDate: ({ date }:{ date: Date }) => {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const day = date.getDate()
+    const month = months[date.getMonth()]
+    const year = date.getFullYear()
+    return `${day} ${month} ${year}`
   }
 
 }

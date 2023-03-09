@@ -1,47 +1,53 @@
 import { API_URL as url } from '@/data/constants'
 
-const getAssets = ({ page, signal }:{ page: number, signal: AbortSignal }) => {
+export const getAssets = ({ page, signal }:{ page: number, signal: AbortSignal }) => {
 
   const offset = page * 20
 
   return fetch(`${url}/assets?offset=${offset}&limit=20`, { signal })
-    .then(res => res.json())
+    .then(res => { 
+      if (res.status !== 200) throw new Error('Response status code not 200')
+      return res.json()
+    })
     .then(res => res.data)
 }
 
-const getAsset = ({ id }:{ id: string }) => {
-  return fetch(`${url}/assets/${id}`)
-    .then(res => res.json())
+export const getAssetById = ({ id, signal }:{ id: string, signal: AbortSignal }) => {
+  return fetch(`${url}/assets/${id}`, { signal })
+    .then(res => { 
+      if (res.status !== 200) throw new Error('Response status code not 200')
+      return res.json()
+    })
     .then(res => res.data)
 }
 
-const getAssetHistory = ({ id }:{ id: string }) => {
+export const getAssetHistory = ({ id, signal }:{ id: string, signal: AbortSignal }) => {
   const now = new Date()
   const end = now.getTime()
   now.setDate(now.getDate() - 1)
   const start = now.getTime()
 
-  return fetch(`${url}/assets/${id}/history?interval=h1&start=${start}&end=${end}`)
-    .then(res => res.json())
+  return fetch(`${url}/assets/${id}/history?interval=h1&start=${start}&end=${end}`, { signal })
+    .then(res => { 
+      if (res.status !== 200) throw new Error('Response status code not 200')
+      return res.json()
+    })
     .then(res => res.data)
 }
 
-const getMarkets = ({ id }:{ id: string }) => {
-  return fetch(`${url}/assets/${id}/markets?limit=5`)
-    .then(res => res.json())
+export const getMarkets = ({ id, signal }:{ id: string, signal: AbortSignal }) => {
+  const limit = 10
+
+  return fetch(`${url}/assets/${id}/markets?limit=${limit}`, { signal })
+    .then(res => {
+      if (res.status !== 200) throw new Error('Response status code not 200')
+      return res.json()
+    })
     .then(res => res.data)
 }
 
-const getExchange = ({ id }:{ id: string }) => {
+export const getExchange = ({ id }:{ id: string }) => {
   return fetch(`${url}/exchanges/${id}`)
   .then(res => res.json())
   .then(res => res.data)
-}
-
-export {
-  getAssets,
-  getAsset,
-  getMarkets,
-  getExchange,
-  getAssetHistory
 }
