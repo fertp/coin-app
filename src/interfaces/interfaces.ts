@@ -39,3 +39,15 @@ export interface Market {
   volumePercent: string
   volumeUsd24Hr: string
 }
+
+export interface Exchange {
+  exchangeId: string
+  exchangeUrl: string
+  name: string
+  percentTotalVolume: string
+  rank: string
+  socket: boolean
+  tradingPairs: string
+  updated: number
+  volumeUsd: string
+}

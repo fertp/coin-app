@@ -1,4 +1,4 @@
-import { Td, Th } from "@/features/public/components";
+import { Td, Th, Thead } from "@/features/public/components";
 import { formatter } from "../../../utils/formatter";
 import { Market } from "@/interfaces/interfaces";
 import { FC } from "react";
@@ -21,21 +21,19 @@ export const MarketsTable:FC<Props> = ({ markets }) => {
         <col />
       </colgroup>
 
-      <thead>
-        <tr className="bg-gray-100 border-b-2 border-gray-200">
-          <Th align="left">Exchange</Th>
+      <Thead>
+        <Th align="left">Exchange</Th>
 
-          <Th>Pair</Th>
+        <Th>Pair</Th>
 
-          <Th className='hidden md:table-cell'>Price</Th>
+        <Th className='hidden md:table-cell'>Price</Th>
 
-          <Th>Volume (24Hr)</Th>
+        <Th>Volume (24Hr)</Th>
 
-          <Th className='hidden md:table-cell'>Volume (%)</Th>
+        <Th className='hidden md:table-cell'>Volume (%)</Th>
 
-          <Th align="center" className='hidden md:table-cell'>Status</Th>
-        </tr>
-      </thead>
+        <Th align="center" className='hidden md:table-cell'>Status</Th>
+      </Thead>
 
       <tbody>
         {

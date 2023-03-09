@@ -1,10 +1,12 @@
 import { Home } from "../pages/Home/Home";
 import { Coin } from "../pages/Coin/Coin";
+import { Exchanges } from "../pages/Exchanges/Exchanges";
+import { Exchange } from "../pages/Exchange/Exchange";
 import { Route } from "@/interfaces/interfaces";
 
 export const routes: Route[] = [
   {
-    path: '',
+    path: '/',
     to: '/',
     Element: Home,
     name: 'Coins'
@@ -13,6 +15,18 @@ export const routes: Route[] = [
     path: 'coins/:id',
     to: null,
     Element: Coin,
+    name: 'Coin'
+  },
+  {
+    path: '/exchanges',
+    to: '/exchanges',
+    Element: Exchanges,
+    name: 'Exchanges'
+  },
+  {
+    path: 'exchanges/:id',
+    to: null,
+    Element: Exchange,
     name: 'Coin'
   }
 ]
