@@ -29,9 +29,9 @@ export const getHistoryParams = (time: historyTime ) => {
   
   const now = new Date()
   const end = now.getTime()
-  now.setDate(now.getDate() - timeMap[time])
-  const start = now.getTime()
-  // const start = now.setDate(now.getDate() - timeMap[time])
+  // now.setDate(now.getDate() - timeMap[time])
+  // const start = now.getTime()
+  const start = now.setDate(now.getDate() - timeMap[time])
   
   return {
     interval: intervalsMap[time],

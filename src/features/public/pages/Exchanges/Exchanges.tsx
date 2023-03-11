@@ -14,7 +14,9 @@ export const Exchanges:FC = () => {
   }
   
   if (isLoading) {
-    return <Loader color='#ea580c' className='mt-12 mx-auto' />
+    return (
+        <Loader color='#ea580c' fullScreen />
+    )
   }
 
   return (
@@ -23,7 +25,7 @@ export const Exchanges:FC = () => {
 
       {
         isFetching ?
-          <Loader color='#ea580c' className='mt-12 mx-auto' />
+          <Loader color='#ea580c' className='mt-12' />
         :
         <Button 
           handleClick={handleViewMore}

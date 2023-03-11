@@ -14,7 +14,9 @@ export const Home:FC = () => {
   }
 
   if (isLoading) {
-    return <Loader color='#ea580c' className='mt-12 mx-auto' />
+    return (
+      <Loader color='#ea580c' fullScreen />
+    )
   }
 
   return (

@@ -12,14 +12,14 @@ export const Navigation:FC<Props> = ({ links }) => {
   
 
   return (
-    <header className="py-2 px-8 bg-gray-200">
+    <header className="py-2 px-4 sm:px-8 bg-gray-200">
       <div className="container xl:max-w-6xl mx-auto flex gap-4 sm:gap-8 items-center">
         <Link 
           to='/'
           className="flex items-center gap-4"
         >
           <ApplicationLogo />
-          <span className="text-2xl font-semibold text-gray-600">Coin App</span>
+          <span className="text-xl font-semibold text-gray-600">Coin App</span>
         </Link>
 
         <nav className="flex gap-8">

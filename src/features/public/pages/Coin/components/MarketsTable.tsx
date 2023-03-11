@@ -1,14 +1,13 @@
 import { Td, Th, Thead } from "@/features/public/components";
-import { formatter } from "../../../utils/formatter";
-import { Market } from "@/interfaces/interfaces";
+import { formatter } from "@/features/public/utils/formatter";
+import { AssetMarket } from "@/interfaces/interfaces";
 import { FC } from "react";
 
 interface Props {
-  markets?: Market[]
+  markets?: AssetMarket[]
 }
 
 export const MarketsTable:FC<Props> = ({ markets }) => {
-
   return (
     <table className='w-full mt-8 md:mt-12'>
       <colgroup>

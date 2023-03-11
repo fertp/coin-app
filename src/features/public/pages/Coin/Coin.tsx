@@ -9,16 +9,17 @@ export const Coin:FC = () => {
   const { id } = useParams()
 
   if (id === undefined) return (
-    <Loader color='#ea580c' className='mt-12 mx-auto' />
+    <Loader color='#ea580c' fullScreen />
   )
 
+  // TODO: Optimize this to reduce renders
   const { data: asset, error: assetError, isLoading: isAssetLoading } = useGetAssetByIdQuery(id)
   const { data: history, error: historyError, isLoading: isHistoryLoading } = useGetAssetHistoryQuery({ id, time: '1d' })
   const { data: markets, error: marketsError, isLoading: isMarketsLoading } = useGetAssetMarketsQuery({ id, limit: 10 })
 
 
-  if ( isAssetLoading ) {
-    return <Loader color='#ea580c' className='mt-12 mx-auto' />
+  if ( isAssetLoading || isHistoryLoading || isMarketsLoading ) {
+    return <Loader color='#ea580c' fullScreen />
   }
 
   return (
