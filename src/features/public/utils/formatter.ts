@@ -34,6 +34,12 @@ export const formatter = {
       .format( value / 100 );
   },
 
+  toNumber: ({ value }:{ value: number }) => {
+    return Intl
+      .NumberFormat('en-Us')
+      .format( value )
+  },
+
   toCustomDate: ({ date }:{ date: Date }) => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const day = date.getDate()

@@ -7,14 +7,16 @@ export const Home:FC = () => {
 
   const [ limit, setLimit ] = useState<number>(20)
 
-  const { data: assets, error, isLoading, isFetching } = useGetAssetsQuery(limit) 
+  const { data: assets, error, isLoading, isFetching } = useGetAssetsQuery(limit)
   
   const handleViewMore = () => {
     setLimit(prev => prev + 20)
   }
 
   if (isLoading) {
-    return <Loader color='#ea580c' className='mt-12 mx-auto' />
+    return (
+      <Loader color='#ea580c' fullScreen />
+    )
   }
 
   return (

@@ -1,13 +1,26 @@
-import { Td, Th } from "@/features/public/components";
-import { formatter } from "../../../utils/formatter";
-import { Market } from "@/interfaces/interfaces";
+import { Loader, Td, Th, Thead } from "@/features/public/components";
+import { formatter } from "@/features/public/utils/formatter";
+import { useGetAssetMarketsQuery } from "@/services/api";
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
-  markets?: Market[]
+  id: string
 }
 
-export const MarketsTable:FC<Props> = ({ markets }) => {
+export const MarketsTable:FC<Props> = ({ id }) => {
+
+  const { data, error, isLoading } = useGetAssetMarketsQuery({ id, limit: 10 })
+
+  if (error) {
+    return <p className="mt-12">Sorry, couldn't get markets data.</p>
+  }
+
+  if (isLoading) {
+    return <Loader color='#ea580c' className='mt-24 mx-auto' />
+  }
+  
+  const markets = data?.data
 
   return (
     <table className='w-full mt-8 md:mt-12'>
@@ -21,21 +34,19 @@ export const MarketsTable:FC<Props> = ({ markets }) => {
         <col />
       </colgroup>
 
-      <thead>
-        <tr className="bg-gray-100 border-b-2 border-gray-200">
-          <Th align="left">Exchange</Th>
+      <Thead>
+        <Th align="left">Exchange</Th>
 
-          <Th>Pair</Th>
+        <Th>Pair</Th>
 
-          <Th className='hidden md:table-cell'>Price</Th>
+        <Th className='hidden md:table-cell'>Price</Th>
 
-          <Th>Volume (24Hr)</Th>
+        <Th>Volume (24Hr)</Th>
 
-          <Th className='hidden md:table-cell'>Volume (%)</Th>
+        <Th className='hidden md:table-cell'>Volume (%)</Th>
 
-          <Th align="center" className='hidden md:table-cell'>Status</Th>
-        </tr>
-      </thead>
+        <Th align="center" className='hidden md:table-cell'>Status</Th>
+      </Thead>
 
       <tbody>
         {
@@ -46,7 +57,13 @@ export const MarketsTable:FC<Props> = ({ markets }) => {
                 className="border-b border-gray-200 hover:bg-orange-100"
               >
                 <Td align="left">
-                  { m.exchangeId }
+                  <Link
+                    className="inline-block hover:underline text-orange-600"
+                    to={ `/exchanges/${m.exchangeId.toLowerCase()}` }
+                  >
+                    { m.exchangeId }
+                  </Link>
+                  
                 </Td>
 
                 <Td>

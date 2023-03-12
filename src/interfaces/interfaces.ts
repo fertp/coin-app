@@ -29,8 +29,8 @@ export interface AssetHistory {
   time: number
 }
 
-export interface Market {
-  baseId: string
+export interface AssetMarket {
+  eId: string
   baseSymbol: string
   exchangeId: string
   priceUsd: string
@@ -38,4 +38,31 @@ export interface Market {
   quoteSymbol: string
   volumePercent: string
   volumeUsd24Hr: string
+}
+
+export interface ExchangeMarket {
+  baseId: string
+  baseSymbol: string
+  exchangeId: string
+  percentExchangeVolume: string
+  priceQuote: string
+  priceUsd: string
+  quoteId: string
+  quoteSymbol: string
+  rank: string
+  tradesCount24Hr: string
+  updated: number
+  volumeUsd24Hr: string
+}
+
+export interface Exchange {
+  exchangeId: string
+  exchangeUrl: string
+  name: string
+  percentTotalVolume: string
+  rank: string
+  socket: boolean
+  tradingPairs: string
+  updated: number
+  volumeUsd: string
 }

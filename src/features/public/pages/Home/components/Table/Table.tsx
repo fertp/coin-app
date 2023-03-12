@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ActionButton } from './ActionButton'
-import { Th, Td } from '@/features/public/components'
+import { Th, Td, Thead, ActionButton } from '@/features/public/components'
 import { Asset } from '@/interfaces/interfaces'
 import { formatter } from '../../../../utils/formatter'
 
@@ -57,43 +56,41 @@ export const Table:FC<Props> = ({ assets }) => {
         <col />
       </colgroup>
 
-      <thead>
-        <tr className="bg-gray-100 border-b-2 border-gray-200">
-          <Th align='center' className='hidden md:table-cell'>
-            <span 
-              onClick={changeSortOrder}
-              role='button'
-              >
-              <span className="underline">Rank</span>
-              &nbsp;
-              { order === 1 ? '👆🏾' : '👇🏾' }
-            </span>
-          </Th>
-
-          <Th align='left'>Name</Th>
-
-          <Th className=''>Price</Th>
-
-          <Th className='hidden md:table-cell'>Market Cap</Th>
-
-          <Th>
-            <span className='hidden sm:inline'>Change&nbsp;</span>
-            <span>(24Hr)</span>
-          </Th>
-
-          <Th className="hidden md:table-cell">
-            {/* <input
-              value={filter}
-              onChange={handleInputChange}
-              className="bg-gray-100 focus:outline-none border-b border-gray-400 py-2 px-4 block w-full appearance-none leading-normal"
-              id="filter"
-              placeholder="Search..."
-              type="text"
-            /> */}
+      <Thead>
+        <Th align='center' className='hidden md:table-cell'>
+          <span 
+            onClick={changeSortOrder}
+            role='button'
+            >
+            <span className="underline">Rank</span>
             &nbsp;
-          </Th>
-        </tr>
-      </thead>
+            { order === 1 ? '👆🏾' : '👇🏾' }
+          </span>
+        </Th>
+
+        <Th align='left'>Name</Th>
+
+        <Th className=''>Price</Th>
+
+        <Th className='hidden md:table-cell'>Market Cap</Th>
+
+        <Th>
+          <span className='hidden sm:inline'>Change&nbsp;</span>
+          <span>(24Hr)</span>
+        </Th>
+
+        <Th className="hidden md:table-cell">
+          {/* <input
+            value={filter}
+            onChange={handleInputChange}
+            className="bg-gray-100 focus:outline-none border-b border-gray-400 py-2 px-4 block w-full appearance-none leading-normal"
+            id="filter"
+            placeholder="Search..."
+            type="text"
+          /> */}
+          &nbsp;
+        </Th>
+      </Thead>
 
       <tbody>
         {
@@ -116,8 +113,8 @@ export const Table:FC<Props> = ({ assets }) => {
 
                   <div className="inline-block align-middle ml-2">
                     <Link
-                      className="block hover:underline text-orange-600"
-                      to={ `coins/${asset.id}` }
+                      className="inline-block hover:underline text-orange-600"
+                      to={ `/coins/${asset.id}` }
                     >
                       { asset.name }
                     </Link>
