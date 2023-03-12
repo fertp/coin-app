@@ -27,7 +27,7 @@ export const Exchange:FC = () => {
       <ExchangeData 
         exchange={exchange?.data} 
         topMarket={topMarket}
-      />  
+      />
 
       <Table markets={markets?.data} />
     </Container>

@@ -10,10 +10,12 @@ import {
   Filler,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { AssetHistory } from "@/interfaces/interfaces";
+import { useAppSelector } from "@/app/hooks";
+import { useGetAssetHistoryQuery } from "@/services/api";
+import { getTimeLabel, reduceIntervals } from "../utils/timeRange";
 
 interface Props {
-  history?: AssetHistory[]
+  id: string
 }
 
 
@@ -27,12 +29,15 @@ ChartJS.register(
   Filler,
 )
 
-export const Chart:FC<Props> = ({ history=[] }) => {
+export const Chart:FC<Props> = ({ id }) => {
 
-  const labels = history.map(({ time }) => {
-    const date = new Date(time).getHours()
-    return date > 12 ? `${date - 12}PM` : `${date}AM`
-  });
+  const { timeRange } = useAppSelector(state => state.asset)
+  
+  const { data: historyData } = useGetAssetHistoryQuery({ id, timeRange })
+
+  const history = reduceIntervals({ intervals: historyData?.data, timeRange })
+
+  const labels = history.map(({ time }) => getTimeLabel({ time, timeRange }))
 
   const data = {
     labels,

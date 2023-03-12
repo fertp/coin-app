@@ -1,13 +1,21 @@
 import { FC } from 'react'
-import { Asset, AssetHistory } from '@/interfaces/interfaces'
 import { formatter } from '../../../utils/formatter'
+import { useGetAssetByIdQuery, useGetAssetHistoryQuery } from '@/services/api'
+import { useAppSelector } from '@/app/hooks'
 
 interface Props {
-  asset?: Asset
-  history?: AssetHistory[]
+  id: string
 }
 
-export const Stats:FC<Props> = ({ asset, history=[] }) => {
+export const Stats:FC<Props> = ({ id }) => {
+
+  const { timeRange } = useAppSelector(state => state.asset)
+
+  const { data: assetData } = useGetAssetByIdQuery(id)
+  const { data: historyData } = useGetAssetHistoryQuery({ id, timeRange })
+
+  const asset = assetData?.data
+  const history = historyData?.data || []
 
   const min = Math.min( ...history.map(h => Number(h.priceUsd)) )
   const max = Math.max( ...history.map(h => Number(h.priceUsd)) )

@@ -1,4 +1,4 @@
-import { Exchange, Market } from "@/interfaces/interfaces"
+import { Exchange, ExchangeMarket } from "@/interfaces/interfaces"
 import { FC } from "react"
 import { Title } from "./Title"
 import { Stats } from "./Stats"
@@ -6,7 +6,7 @@ import { Stats } from "./Stats"
 
 interface Props {
   exchange?: Exchange
-  topMarket?: Market
+  topMarket?: ExchangeMarket
 }
 
 export const ExchangeData:FC<Props> = ({ exchange, topMarket }) => {

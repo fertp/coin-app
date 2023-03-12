@@ -1,11 +1,11 @@
 import { LinkButton } from "@/features/public/components";
 import { formatter } from "@/features/public/utils/formatter";
-import { Exchange, Market } from "@/interfaces/interfaces";
+import { Exchange, ExchangeMarket } from "@/interfaces/interfaces";
 import { FC } from "react";
 
 interface Props {
   exchange?: Exchange
-  topMarket?: Market
+  topMarket?: ExchangeMarket
 }
 
 export const Stats:FC<Props> = ({ exchange, topMarket }) => {

@@ -1,7 +1,7 @@
 import { Asset, AssetHistory, AssetMarket, Exchange, ExchangeMarket } from "@/interfaces/interfaces";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { API_URL as url } from '@/data/constants';
-import { getHistoryParams, historyTime } from "@/features/public/utils/getHistoryParams";
+import { getHistoryParams, timeRange } from "@/features/public/pages/Coin/utils/timeRange";
 
 
 export const coincapApi = createApi({
@@ -21,9 +21,9 @@ export const coincapApi = createApi({
       query: (id) => `/assets/${id}`,      
     }),
 
-    getAssetHistory: builder.query<{ data: AssetHistory[] }, { id: string, time: historyTime }>({
-      query: ({ id, time }) => {
-        const { interval, start, end } = getHistoryParams(time)
+    getAssetHistory: builder.query<{ data: AssetHistory[] }, { id: string, timeRange: timeRange }>({
+      query: ({ id, timeRange }) => {
+        const { interval, start, end } = getHistoryParams(timeRange)
         return `/assets/${id}/history?interval=${interval}&start=${start}&end=${end}`
       }
     }),
