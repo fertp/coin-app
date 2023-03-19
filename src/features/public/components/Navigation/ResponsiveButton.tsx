@@ -18,7 +18,7 @@ export const ResponsiveButton = ({  }) => {
   return (
     <div 
       role="button"
-      className="w-12 h-12 px-2 py-3 box-border flex flex-col justify-between"
+      className="w-12 h-12 px-2 py-4 box-border flex flex-col justify-between"
       onClick={() => toogleIsOpen()}
     >
       <span className="block w-full h-px bg-gray-700"></span>

@@ -16,7 +16,6 @@ export const coincapApi = createApi({
       providesTags: ['Assets']
     }),
 
-
     getAssetById: builder.query<{ data: Asset }, string>({
       query: (id) => `/assets/${id}`,      
     }),
@@ -32,9 +31,17 @@ export const coincapApi = createApi({
       query: ({ id, limit }) => `/assets/${id}/markets?limit=${limit}`
     }),
 
+    searchAssetsById: builder.query<{ data: Asset[] }, { query: string, limit: number }>({
+      query: ({ query, limit }) => `/assets?search=${query}&limit=${limit}`,
+    }),
+
     getExchanges: builder.query<{ data: Exchange[] }, number>({
       query: (limit) => `/exchanges?offset=0&limit=${limit}`,
       providesTags: ['Exchanges']
+    }),
+
+    getAllExchanges: builder.query<{ data: Exchange[] }, void>({
+      query: () => '/exchanges'
     }),
 
     getExcahngeById: builder.query<{ data: Exchange }, string>({
@@ -43,7 +50,7 @@ export const coincapApi = createApi({
 
     getExchangeMarkets: builder.query<{ data: ExchangeMarket[] }, string>({
       query: (id) => `/markets?exchangeId=${id}&offset=0&limit=20`
-    })
+    }),
   })
 })
 
@@ -54,5 +61,7 @@ export const {
   useGetAssetMarketsQuery,
   useGetExchangesQuery,
   useGetExcahngeByIdQuery,
-  useGetExchangeMarketsQuery
+  useGetExchangeMarketsQuery,
+  useGetAllExchangesQuery,
+  useLazySearchAssetsByIdQuery,
 } = coincapApi

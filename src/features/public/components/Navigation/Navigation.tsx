@@ -1,11 +1,14 @@
 import { Route } from "@/interfaces/interfaces";
-import { FC, useContext, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { FC, useContext } from "react";
+import { Link } from "react-router-dom";
 import { ApplicationLogo } from "../ui/ApplicationLogo";
 import { NavigationLink } from "./NavigationLink";
 import { ResponsiveButton } from "./ResponsiveButton";
 import { NavigationContext, NavigationProvider } from "./context/NavigationContext";
 import { ResponsiveNavigationLink } from "./ResponsiveNavigationLink";
+import { SearchBar } from "../SearchBar";
+
+
 
 interface Props {
   links: Route[]
@@ -34,14 +37,17 @@ const Child:FC<Props> = ({ links }) => {
           <ApplicationLogo />
         </Link>
 
-        <div className="sm:hidden">
-          <ResponsiveButton />
-        </div>
-        
+        <div className="flex items-center gap-2 sm:gap-8">
+          <SearchBar />
 
-        <nav className="hidden sm:flex gap-8">
-          { links.map(l =>  <NavigationLink key={l.to} {...l} /> ) }
-        </nav>
+          <div className="sm:hidden">
+            <ResponsiveButton />
+          </div>
+          
+          <nav className="hidden sm:flex gap-8">
+            { links.map(l =>  <NavigationLink key={l.to} {...l} /> ) }
+          </nav>
+        </div>
 
         {/* Sign In | Sign Up */}
         {/* User */}
