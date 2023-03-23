@@ -1,7 +1,7 @@
 import { FC, ReactNode, RefObject, createContext, useReducer, useRef } from "react";
 import { SearchState, initialState, searchReducer } from "../reducer/searchReducer";
 
-interface SearchContext extends SearchState {
+export interface SearchContext extends SearchState {
   dispatcher: SearchDispatcher
   inputRef: RefObject<HTMLInputElement>
 }

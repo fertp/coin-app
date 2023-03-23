@@ -1,12 +1,12 @@
-import { FC, useContext, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 import { useSearchData } from "../hooks/useSearchData";
-import { SearchContext } from "../context/searchContext";
 import { ResultItem } from "./ResultItem";
 import { useHandleKeys } from "../hooks/useHandleKeys";
+import { useSearchContext } from "../hooks/useSearchContext";
 
 export const SearchResults:FC = () => {
 
-  const { query } = useContext(SearchContext)
+  const { query } = useSearchContext();
 
   const indexesListRef = useRef<({ index: number; to: string; name: string; } | undefined)[]>([]);
 
@@ -23,7 +23,7 @@ export const SearchResults:FC = () => {
   return (
     <div className="absolute top-full left-0 mt-1 w-full bg-white border shadow shadow-[rgba(0,0,0,0.25)]">
       { 
-        ( assets && assets?.length > 0 ) && 
+        ( !!assets && assets?.length > 0 && !isLoading ) && 
         <div>
           <b className="px-2 py-2 text-orange-500">Assets:</b> 
 
@@ -33,10 +33,10 @@ export const SearchResults:FC = () => {
         </div>
       }
 
-      <hr />
+      {((!!assets && assets?.length > 0) && (!!exchanges && exchanges?.length > 0)) && <hr />}
       
       { 
-        ( exchanges && exchanges?.length > 0 ) && 
+        ( !!exchanges && exchanges?.length > 0 && !isLoading ) && 
         <div>
           <b className="px-2 py-2 text-orange-500">Exchanges:</b> 
 

@@ -10,13 +10,7 @@ interface ProviderProps {
   children: ReactElement | ReactElement[]
 }
 
-const defaultValue = {
-  isOpen: false,
-  setIsOpen: () => {},
-  toogleIsOpen: () => {}
-}
-
-export const NavigationContext = createContext<NavigationContext>(defaultValue)
+export const NavigationContext = createContext({} as NavigationContext)
 
 export const NavigationProvider:FC<ProviderProps> = ({ children }) => {
 

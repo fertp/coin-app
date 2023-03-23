@@ -1,6 +1,6 @@
-import { FC, ReactNode, useContext } from "react"
+import { FC, ReactNode } from "react"
 import { Link } from "react-router-dom"
-import { SearchContext } from "../context/searchContext"
+import { useSearchContext } from "../hooks/useSearchContext"
 
 interface Props { 
   children: ReactNode, 
@@ -10,7 +10,7 @@ interface Props {
 
 export const ResultItem:FC<Props> = ({ children, to, index }) => {
 
-  const { selected, dispatcher } = useContext(SearchContext)
+  const { selected, dispatcher } = useSearchContext();
 
   return (
     <Link
