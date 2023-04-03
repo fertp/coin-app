@@ -1,4 +1,4 @@
-import { Td, Th, Thead } from "@/features/public/components"
+import { Table, Td, Th, Thead } from "@/features/public/components"
 import { formatter } from "@/features/public/utils/formatter"
 import { ExchangeMarket } from "@/interfaces/interfaces"
 import { FC } from "react"
@@ -7,9 +7,9 @@ interface Props {
   markets?: ExchangeMarket[]
 }
 
-export const Table:FC<Props> = ({ markets }) => {
+export const MarketsTable:FC<Props> = ({ markets }) => {
   return (
-    <table className="w-full mt-8 md:mt-12">
+    <Table className="mt-8 md:mt-12">
       <colgroup>
         <col className='min-w-fit' />
         <col />
@@ -68,6 +68,6 @@ export const Table:FC<Props> = ({ markets }) => {
           ))
         }
       </tbody>
-    </table>
+    </Table>
   )
 }

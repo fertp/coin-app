@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Container, Loader } from "../../components";
 import { useParams } from "react-router-dom";
 import { useGetExcahngeByIdQuery, useGetExchangeMarketsQuery } from "@/services/api";
-import { ExchangeData, Table } from "./components";
+import { ExchangeData, MarketsTable } from "./components";
 
 
 export const Exchange:FC = () => {
@@ -29,7 +29,7 @@ export const Exchange:FC = () => {
         topMarket={topMarket}
       />
 
-      <Table markets={markets?.data} />
+      <MarketsTable markets={markets?.data} />
     </Container>
   )
 }

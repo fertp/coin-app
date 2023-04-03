@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Th, Td, Thead, ActionButton } from '@/features/public/components'
+import { Table, Th, Td, Thead, ActionButton } from '@/features/public/components'
 import { Asset } from '@/interfaces/interfaces'
 import { formatter } from '../../../../utils/formatter'
 
@@ -8,7 +8,7 @@ interface Props {
   assets: Asset[]
 }
 
-export const Table:FC<Props> = ({ assets }) => {
+export const AssetsTable:FC<Props> = ({ assets }) => {
 
   const [order, setOrder] = useState<number>(1)
   const [filter, setFilter] = useState<string>('')
@@ -45,7 +45,7 @@ export const Table:FC<Props> = ({ assets }) => {
   const filteredAssets = filterAssets()
 
   return (
-    <table className='w-full'>
+    <Table>
       <colgroup>
         <col />
         <col className='min-w-fit' />
@@ -57,7 +57,7 @@ export const Table:FC<Props> = ({ assets }) => {
       </colgroup>
 
       <Thead>
-        <Th align='center' className='hidden md:table-cell'>
+        <Th align='center' displayFrom='md'>
           <span 
             onClick={changeSortOrder}
             role='button'
@@ -70,16 +70,16 @@ export const Table:FC<Props> = ({ assets }) => {
 
         <Th align='left'>Name</Th>
 
-        <Th className=''>Price</Th>
+        <Th>Price</Th>
 
-        <Th className='hidden md:table-cell'>Market Cap</Th>
+        <Th displayFrom='md'>Market Cap</Th>
 
         <Th>
           <span className='hidden sm:inline'>Change&nbsp;</span>
           <span>(24Hr)</span>
         </Th>
 
-        <Th className="hidden md:table-cell">
+        <Th displayFrom='md'>
           {/* <input
             value={filter}
             onChange={handleInputChange}
@@ -100,7 +100,7 @@ export const Table:FC<Props> = ({ assets }) => {
                 key={asset.name}
                 className="border-b border-gray-200 hover:bg-orange-100"
               >
-                <Td align='center' className='hidden md:table-cell'>
+                <Td align='center' displayFrom='md'>
                   { asset.rank }
                 </Td>
 
@@ -128,7 +128,7 @@ export const Table:FC<Props> = ({ assets }) => {
                   { formatter.toUSDollar({ value: Number(asset.priceUsd )}) }
                 </Td>
 
-                <Td className='hidden md:table-cell'>
+                <Td displayFrom='md'>
                   { formatter.toCompactUSDollar({ value: Number(asset.marketCapUsd) }) }
                 </Td>
 
@@ -136,7 +136,7 @@ export const Table:FC<Props> = ({ assets }) => {
                   { formatter.toPercentage({ value: Number(asset.changePercent24Hr) }) }
                 </Td>
 
-                <Td className="hidden md:table-cell">
+                <Td displayFrom='md'>
                   <ActionButton 
                     to={ `/coins/${asset.id}` }
                     aria-label={`Go to ${asset.name} page`}
@@ -149,7 +149,7 @@ export const Table:FC<Props> = ({ assets }) => {
           })
         } 
       </tbody>
-    </table>
+    </Table>
   )
 }
 

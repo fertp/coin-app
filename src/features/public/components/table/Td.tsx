@@ -5,6 +5,7 @@ interface Props {
   className?: string
   align?: 'left' | 'center' | 'right'
   colSpan?: number
+  displayFrom?: 'sm' | 'md'
 }
 
 const aligns = {
@@ -13,10 +14,15 @@ const aligns = {
   center: 'text-center',
 }
 
-export const Td:FC<Props> = ({ children, className='', align='right' }) => {
+const displayFromMap = {
+  sm: 'hidden sm:table-cell',
+  md: 'hidden md:table-cell',
+}
+
+export const Td:FC<Props> = ({ children, className='', align='right', displayFrom }) => {
 
   return (
-    <td className={`py-2 sm:py-1 px-2 text-sm font-light ${aligns[align]} ${className}`} >
+    <td className={`py-2 sm:py-1 px-2 text-sm font-light ${!!displayFrom && displayFromMap[displayFrom]} ${aligns[align]} ${className}`} >
       { children }
     </td>
   )

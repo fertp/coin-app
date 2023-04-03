@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Button, Container, Loader } from "../../components";
 import { useGetExchangesQuery } from "@/services/api";
-import { Table } from "./components";
+import { ExchangesTable } from "./components";
 
 export const Exchanges:FC = () => {
 
@@ -21,7 +21,7 @@ export const Exchanges:FC = () => {
 
   return (
     <Container>
-      <Table exchanges={data?.data ?? []} />
+      <ExchangesTable exchanges={data?.data ?? []} />
 
       {
         isFetching ?

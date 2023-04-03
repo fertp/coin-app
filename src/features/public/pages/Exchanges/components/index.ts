@@ -1,1 +1,1 @@
-export { Table } from "./Table/Table";
+export { ExchangesTable } from "./ExchangesTable/ExchangesTable";

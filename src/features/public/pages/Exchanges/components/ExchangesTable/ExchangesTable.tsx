@@ -1,4 +1,4 @@
-import { ActionButton, Td, Th, Thead } from "@/features/public/components";
+import { Table, ActionButton, Td, Th, Thead } from "@/features/public/components";
 import { formatter } from "@/features/public/utils/formatter";
 import { Exchange } from "@/interfaces/interfaces";
 import { FC } from "react";
@@ -8,9 +8,9 @@ interface Props {
   exchanges: Exchange[]
 }
 
-export const Table:FC<Props> = ({ exchanges }) => {
+export const ExchangesTable:FC<Props> = ({ exchanges }) => {
   return (
-    <table className='w-full'>
+    <Table>
       <colgroup>
         <col />
         <col className='min-w-fit' />
@@ -110,6 +110,6 @@ export const Table:FC<Props> = ({ exchanges }) => {
           ))
         }
       </tbody>
-    </table>
+    </Table>
   )
 }

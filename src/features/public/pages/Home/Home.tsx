@@ -1,5 +1,5 @@
 import { FC, useState } from "react"
-import { Table } from "./components"
+import { AssetsTable } from "./components"
 import { Container, Button, Loader } from "../../components"
 import { useGetAssetsQuery } from "@/services/api"
 
@@ -21,7 +21,7 @@ export const Home:FC = () => {
 
   return (
     <Container>
-      <Table assets={assets?.data ?? []} />
+      <AssetsTable assets={assets?.data ?? []} />
 
       {
         isFetching ?

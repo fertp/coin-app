@@ -1,4 +1,4 @@
-import { Loader, Td, Th, Thead } from "@/features/public/components";
+import { Table, Loader, Td, Th, Thead } from "@/features/public/components";
 import { formatter } from "@/features/public/utils/formatter";
 import { useGetAssetMarketsQuery } from "@/services/api";
 import { FC } from "react";
@@ -23,7 +23,7 @@ export const MarketsTable:FC<Props> = ({ id }) => {
   const markets = data?.data
 
   return (
-    <table className='w-full mt-8 md:mt-12'>
+    <Table className='mt-8 md:mt-12'>
       <colgroup>
         <col />
         <col className='min-w-fit' />
@@ -90,6 +90,6 @@ export const MarketsTable:FC<Props> = ({ id }) => {
           })
         }
       </tbody>
-    </table>
+    </Table>
   )
 }
