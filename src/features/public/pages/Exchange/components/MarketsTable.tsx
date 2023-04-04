@@ -1,15 +1,15 @@
-import { Table, Td, Th, Thead } from "@/features/public/components"
-import { formatter } from "@/features/public/utils/formatter"
-import { ExchangeMarket } from "@/interfaces/interfaces"
-import { FC } from "react"
+import { Table, Td, Th, Thead } from '@/features/public/components'
+import { formatter } from '@/features/public/utils/formatter'
+import { type ExchangeMarket } from '@/interfaces/interfaces'
+import { type FC } from 'react'
 
 interface Props {
   markets?: ExchangeMarket[]
 }
 
-export const MarketsTable:FC<Props> = ({ markets }) => {
+export const MarketsTable: FC<Props> = ({ markets }) => {
   return (
-    <Table className="mt-8 md:mt-12">
+    <Table className='mt-8 md:mt-12'>
       <colgroup>
         <col className='min-w-fit' />
         <col />
@@ -21,7 +21,7 @@ export const MarketsTable:FC<Props> = ({ markets }) => {
       </colgroup>
 
       <Thead>
-        <Th align="left">Pair</Th>
+        <Th align='left'>Pair</Th>
 
         <Th>Rate</Th>
 
@@ -33,40 +33,44 @@ export const MarketsTable:FC<Props> = ({ markets }) => {
 
         <Th className='hidden md:table-cell'>Trades (24Hr)</Th>
 
-        <Th className='hidden md:table-cell' align="center">Status</Th>
+        <Th
+          className='hidden md:table-cell'
+          align='center'
+        >
+          Status
+        </Th>
       </Thead>
 
       <tbody>
-        {
-          markets?.map(m => (
-            <tr
-              key={`${m.baseSymbol}${m.quoteSymbol}`}
-              className="border-b border-gray-200 hover:bg-orange-100"
-            >
-              <Td align="left">
-                {`${m.baseSymbol}/${m.quoteSymbol}`}
-              </Td>
+        {markets?.map(m => (
+          <tr
+            key={`${m.baseSymbol}${m.quoteSymbol}`}
+            className='border-b border-gray-200 hover:bg-orange-100'
+          >
+            <Td align='left'>{`${m.baseSymbol}/${m.quoteSymbol}`}</Td>
 
-              <Td>{ `${Number(m.priceQuote)}` }</Td>
-              
-              <Td className='hidden md:table-cell'>
-                { formatter.toUSDollar({ value: Number(m.priceUsd) }) }
-              </Td>
-              
-              <Td>{ formatter.toCompactUSDollar({ value: Number(m.volumeUsd24Hr) }) }</Td>
-              
-              <Td className='hidden md:table-cell'>
-                { formatter.toPercentage({ value: Number(m.percentExchangeVolume) }) }
-              </Td>
-              
-              <Td className='hidden md:table-cell'>
-                { formatter.toNumber({ value: Number(m.tradesCount24Hr) }) }
-              </Td>
-              
-              <Td className='hidden md:table-cell' align="center">-</Td>
-            </tr>
-          ))
-        }
+            <Td>{`${Number(m.priceQuote)}`}</Td>
+
+            <Td className='hidden md:table-cell'>{formatter.toUSDollar({ value: Number(m.priceUsd) })}</Td>
+
+            <Td>{formatter.toCompactUSDollar({ value: Number(m.volumeUsd24Hr) })}</Td>
+
+            <Td className='hidden md:table-cell'>
+              {formatter.toPercentage({
+                value: Number(m.percentExchangeVolume)
+              })}
+            </Td>
+
+            <Td className='hidden md:table-cell'>{formatter.toNumber({ value: Number(m.tradesCount24Hr) })}</Td>
+
+            <Td
+              className='hidden md:table-cell'
+              align='center'
+            >
+              -
+            </Td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   )

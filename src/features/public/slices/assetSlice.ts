@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { timeRange, timeRanges } from "../pages/Coin/utils/timeRange";
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { type timeRange, timeRanges } from '../pages/Coin/utils/timeRange'
 
 interface InitialState {
   id: string | undefined
@@ -20,7 +20,7 @@ export const assetSlice = createSlice({
     },
     setTimeRange: (state, action: PayloadAction<timeRange>) => {
       state.timeRange = action.payload
-    },
+    }
   }
 })
 

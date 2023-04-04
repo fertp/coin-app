@@ -1,25 +1,26 @@
-import { FC, ReactNode } from "react"
-import { Link } from "react-router-dom"
-import { useSearchContext } from "../hooks/useSearchContext"
+import { type FC, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { useSearchContext } from '../hooks/useSearchContext'
 
-interface Props { 
-  children: ReactNode, 
-  to: string, 
+interface Props {
+  children: ReactNode
+  to: string
   index: number
 }
 
-export const ResultItem:FC<Props> = ({ children, to, index }) => {
-
-  const { selected, dispatcher } = useSearchContext();
+export const ResultItem: FC<Props> = ({ children, to, index }) => {
+  const { selected, dispatcher } = useSearchContext()
 
   return (
     <Link
       to={to}
-      onMouseMove={() => dispatcher.setSelected(index) }
+      onMouseMove={() => {
+        dispatcher.setSelected(index)
+      }}
       tabIndex={-1}
-      className={`block px-2 py-1 hover:-bg-orange-100 ${selected === index && 'bg-orange-100'}`}
+      className={`hover:-bg-orange-100 block px-2 py-1 ${selected === index && 'bg-orange-100'}`}
     >
-      { children }
+      {children}
     </Link>
   )
 }

@@ -1,13 +1,11 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, type RefObject } from 'react'
 
-
-const useOnClickOutside = ( callbackFn: () => void ) => {
-  const ref = useRef<HTMLDivElement>(null);
+const useOnClickOutside = (callbackFn: () => void): RefObject<HTMLDivElement> => {
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleClick = (event: MouseEvent | TouchEvent) => {
-      
-      if (!ref.current || ref.current.contains(event.target as Node)) {
+    const handleClick = (event: MouseEvent | TouchEvent): void => {
+      if (ref.current == null || ref.current.contains(event.target as Node)) {
         return
       }
       callbackFn()

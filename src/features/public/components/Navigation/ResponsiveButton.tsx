@@ -1,29 +1,32 @@
-import { useContext, useEffect } from "react"
-import { NavigationContext } from "./context/NavigationContext"
-import { SM_BREAKPOINT } from "@/data/constants"
+import { type FC, useContext, useEffect } from 'react'
+import { NavigationContext } from './context/NavigationContext'
+import { SM_BREAKPOINT } from '@/data/constants'
 
-export const ResponsiveButton = ({  }) => {
-
+export const ResponsiveButton: FC = () => {
   const { toogleIsOpen, setIsOpen } = useContext(NavigationContext)
 
-  const handleResize = () => {
-    if ( window.innerWidth > SM_BREAKPOINT ) setIsOpen(false)
+  const handleResize = (): void => {
+    if (window.innerWidth > SM_BREAKPOINT) setIsOpen(false)
   }
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
-    return () => window.addEventListener('resize', handleResize)
+    return () => {
+      window.addEventListener('resize', handleResize)
+    }
   }, [])
 
   return (
-    <div 
-      role="button"
-      className="w-12 h-12 px-2 py-4 box-border flex flex-col justify-between"
-      onClick={() => toogleIsOpen()}
+    <div
+      role='button'
+      className='box-border flex h-12 w-12 flex-col justify-between px-2 py-4'
+      onClick={() => {
+        toogleIsOpen()
+      }}
     >
-      <span className="block w-full h-px bg-gray-700"></span>
-      <span className="block w-full h-px bg-gray-700"></span>
-      <span className="block w-full h-px bg-gray-700"></span>
+      <span className='block h-px w-full bg-gray-700'></span>
+      <span className='block h-px w-full bg-gray-700'></span>
+      <span className='block h-px w-full bg-gray-700'></span>
     </div>
   )
 }

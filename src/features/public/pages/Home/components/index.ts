@@ -1,1 +1,1 @@
-export { AssetsTable } from "./AssetsTable/AssetsTable";
+export { AssetsTable } from './AssetsTable/AssetsTable'

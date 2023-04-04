@@ -1,4 +1,4 @@
-import React from "react"
+import type React from 'react'
 
 export interface Route {
   path: string
@@ -8,18 +8,18 @@ export interface Route {
 }
 
 export interface Asset {
-  id:	string
-  rank:	string
-  symbol:	string
-  name:	string
-  supply:	string
-  maxSupply:	string
-  marketCapUsd:	string
-  volumeUsd24Hr:	string
-  priceUsd:	string
-  changePercent24Hr:	string
-  vwap24Hr:	string
-  explorer:	string
+  id: string
+  rank: string
+  symbol: string
+  name: string
+  supply: string
+  maxSupply: string
+  marketCapUsd: string
+  volumeUsd24Hr: string
+  priceUsd: string
+  changePercent24Hr: string
+  vwap24Hr: string
+  explorer: string
 }
 
 export interface AssetHistory {

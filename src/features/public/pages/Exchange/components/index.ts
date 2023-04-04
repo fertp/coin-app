@@ -1,2 +1,2 @@
-export { ExchangeData } from "./ExchangeData/ExchangeData";
-export { MarketsTable } from "./MarketsTable";
+export { ExchangeData } from './ExchangeData/ExchangeData'
+export { MarketsTable } from './MarketsTable'

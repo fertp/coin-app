@@ -1,8 +1,8 @@
-import { Home } from "../pages/Home/Home";
-import { Coin } from "../pages/Coin/Coin";
-import { Exchanges } from "../pages/Exchanges/Exchanges";
-import { Exchange } from "../pages/Exchange/Exchange";
-import { Route } from "@/interfaces/interfaces";
+import { Home } from '../pages/Home/Home'
+import { Coin } from '../pages/Coin/Coin'
+import { Exchanges } from '../pages/Exchanges/Exchanges'
+import { Exchange } from '../pages/Exchange/Exchange'
+import { type Route } from '@/interfaces/interfaces'
 
 export const routes: Route[] = [
   {

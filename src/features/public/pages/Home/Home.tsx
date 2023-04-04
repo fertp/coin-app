@@ -1,21 +1,23 @@
-import { FC, useState } from "react"
-import { AssetsTable } from "./components"
-import { Container, Button, Loader } from "../../components"
-import { useGetAssetsQuery } from "@/services/api"
+import { type FC, useState } from 'react'
+import { AssetsTable } from './components'
+import { Container, Button, Loader } from '../../components'
+import { useGetAssetsQuery } from '@/services/api'
 
-export const Home:FC = () => {
+export const Home: FC = () => {
+  const [limit, setLimit] = useState<number>(20)
 
-  const [ limit, setLimit ] = useState<number>(20)
+  const { data: assets, isLoading, isFetching } = useGetAssetsQuery(limit)
 
-  const { data: assets, error, isLoading, isFetching } = useGetAssetsQuery(limit)
-  
-  const handleViewMore = () => {
+  const handleViewMore = (): void => {
     setLimit(prev => prev + 20)
   }
 
   if (isLoading) {
     return (
-      <Loader color='#ea580c' fullScreen />
+      <Loader
+        color='#ea580c'
+        fullScreen
+      />
     )
   }
 
@@ -23,17 +25,19 @@ export const Home:FC = () => {
     <Container>
       <AssetsTable assets={assets?.data ?? []} />
 
-      {
-        isFetching ?
-          <Loader color='#ea580c' className='mt-12 mx-auto' />
-        :
-        <Button 
+      {isFetching ? (
+        <Loader
+          color='#ea580c'
+          className='mx-auto mt-12'
+        />
+      ) : (
+        <Button
           handleClick={handleViewMore}
-          className='mt-12 mx-auto'
+          className='mx-auto mt-12'
         >
           View More
         </Button>
-      }
+      )}
     </Container>
   )
 }

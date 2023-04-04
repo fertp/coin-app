@@ -1,4 +1,3 @@
-
 export interface SearchState {
   isOpen: boolean
   query: string
@@ -6,12 +5,12 @@ export interface SearchState {
 }
 
 export type SearchActions =
-  { type: 'openInput' } |
-  { type: 'closeInput' } |
-  { type: 'setQuery', payload: { value: string } } |
-  { type: 'setSelected', payload: { value: number } } |
-  { type: 'incrementSelected', payload: { length: number } } |
-  { type: 'decrementSelected' }
+  | { type: 'openInput' }
+  | { type: 'closeInput' }
+  | { type: 'setQuery'; payload: { value: string } }
+  | { type: 'setSelected'; payload: { value: number } }
+  | { type: 'incrementSelected'; payload: { length: number } }
+  | { type: 'decrementSelected' }
 
 export const initialState = {
   isOpen: false,
@@ -54,7 +53,7 @@ export const searchReducer = (state: SearchState, action: SearchActions): Search
         ...state,
         selected: state.selected < 0 ? -1 : state.selected - 1
       }
-      
+
     case 'incrementSelected':
       return {
         ...state,
@@ -62,6 +61,6 @@ export const searchReducer = (state: SearchState, action: SearchActions): Search
       }
 
     default:
-      return state;
+      return state
   }
 }

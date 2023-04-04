@@ -1,15 +1,13 @@
-import { FC } from "react";
+import { type FC } from 'react'
 
 interface Props {
-  children: React.ReactElement | React.ReactElement[]
+  children: React.ReactNode
 }
 
-export const Thead:FC<Props> = ({ children }) => {
+export const Thead: FC<Props> = ({ children }) => {
   return (
     <thead>
-      <tr className="bg-gray-100 border-b-2 border-gray-200">
-        { children }
-      </tr>
+      <tr className='border-b-2 border-gray-200 bg-gray-100'>{children}</tr>
     </thead>
   )
 }

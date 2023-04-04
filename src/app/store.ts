@@ -7,8 +7,7 @@ export const store = configureStore({
     [coincapApi.reducerPath]: coincapApi.reducer,
     asset: assetSlice
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(coincapApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(coincapApi.middleware)
 })
 
 export type RootState = ReturnType<typeof store.getState>

@@ -1,20 +1,19 @@
-import { Exchange, ExchangeMarket } from "@/interfaces/interfaces"
-import { FC } from "react"
-import { Title } from "./Title"
-import { Stats } from "./Stats"
-
+import { type Exchange, type ExchangeMarket } from '@/interfaces/interfaces'
+import { type FC } from 'react'
+import { Title } from './Title'
+import { Stats } from './Stats'
 
 interface Props {
   exchange?: Exchange
   topMarket?: ExchangeMarket
 }
 
-export const ExchangeData:FC<Props> = ({ exchange, topMarket }) => {
+export const ExchangeData: FC<Props> = ({ exchange, topMarket }) => {
   return (
-    <section className="px-8 sm:px-0 grid sm:grid-cols-2 gap-8 sm:gap-12 sm:place-items-center">
+    <section className='grid gap-8 px-8 sm:grid-cols-2 sm:place-items-center sm:gap-12 sm:px-0'>
       <Title exchange={exchange} />
 
-      <Stats 
+      <Stats
         exchange={exchange}
         topMarket={topMarket}
       />

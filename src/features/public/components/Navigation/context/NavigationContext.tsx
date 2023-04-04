@@ -1,29 +1,24 @@
-import { Dispatch, FC, ReactElement, SetStateAction, createContext, useState } from "react";
+import { type FC, createContext, useState } from 'react'
+import type { INavigationContext, ProviderProps } from '../interfaces'
 
-interface NavigationContext {
-  isOpen: boolean
-  setIsOpen: Dispatch<SetStateAction<boolean>>
-  toogleIsOpen: () => void
-}
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+export const NavigationContext = createContext({} as INavigationContext)
 
-interface ProviderProps {
-  children: ReactElement | ReactElement[]
-}
+export const NavigationProvider: FC<ProviderProps> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false)
 
-export const NavigationContext = createContext({} as NavigationContext)
-
-export const NavigationProvider:FC<ProviderProps> = ({ children }) => {
-
-  const [ isOpen, setIsOpen ] = useState(false)
-
-  const toogleIsOpen = () => setIsOpen(prev => !prev)
+  const toogleIsOpen = (): void => {
+    setIsOpen(prev => !prev)
+  }
 
   return (
-    <NavigationContext.Provider value={{
-      isOpen,
-      setIsOpen,
-      toogleIsOpen
-    }}>
+    <NavigationContext.Provider
+      value={{
+        isOpen,
+        setIsOpen,
+        toogleIsOpen
+      }}
+    >
       {children}
     </NavigationContext.Provider>
   )

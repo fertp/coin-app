@@ -1,36 +1,33 @@
-import React, { FC, useState } from 'react'
+import { type FC } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Table, Th, Td, Thead, ActionButton } from '@/features/public/components'
-import { Asset } from '@/interfaces/interfaces'
+import { type Asset } from '@/interfaces/interfaces'
 import { formatter } from '../../../../utils/formatter'
 
 interface Props {
   assets: Asset[]
 }
 
-export const AssetsTable:FC<Props> = ({ assets }) => {
-
+export const AssetsTable: FC<Props> = ({ assets }) => {
   const [order, setOrder] = useState<number>(1)
-  const [filter, setFilter] = useState<string>('')
+  const [filter] = useState<string>('')
 
   // TODO: Trigger a request to find assets
   // TODO: Debounce it
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement> ) => {
-    setFilter(e.target.value)
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setFilter(e.target.value)
+  // }
+
+  const changeSortOrder = (): void => {
+    setOrder(prev => prev * -1)
   }
 
-  const changeSortOrder = () => {
-    setOrder( prev => prev * -1 )
-  }
-
-  const filterAssets = () => {
-
+  const filterAssets = (): Asset[] => {
     const altOrder = order * -1
 
-    const localAssets = assets.filter(a => 
-        a.symbol.toLowerCase().includes(filter.toLowerCase()) ||
-        a.name.toLowerCase().includes(filter.toLowerCase())
-      )
+    const localAssets = assets
+      .filter(a => a.symbol.toLowerCase().includes(filter.toLowerCase()) || a.name.toLowerCase().includes(filter.toLowerCase()))
       .sort((a, b) => {
         if (parseInt(a.rank) > parseInt(b.rank)) {
           return order
@@ -57,14 +54,17 @@ export const AssetsTable:FC<Props> = ({ assets }) => {
       </colgroup>
 
       <Thead>
-        <Th align='center' displayFrom='md'>
-          <span 
+        <Th
+          align='center'
+          displayFrom='md'
+        >
+          <span
             onClick={changeSortOrder}
             role='button'
-            >
-            <span className="underline">Rank</span>
+          >
+            <span className='underline'>Rank</span>
             &nbsp;
-            { order === 1 ? '👆🏾' : '👇🏾' }
+            {order === 1 ? '👆🏾' : '👇🏾'}
           </span>
         </Th>
 
@@ -93,61 +93,62 @@ export const AssetsTable:FC<Props> = ({ assets }) => {
       </Thead>
 
       <tbody>
-        {
-          filteredAssets.map(asset => {
-            return (
-              <tr
-                key={asset.name}
-                className="border-b border-gray-200 hover:bg-orange-100"
+        {filteredAssets.map(asset => {
+          return (
+            <tr
+              key={asset.name}
+              className='border-b border-gray-200 hover:bg-orange-100'
+            >
+              <Td
+                align='center'
+                displayFrom='md'
               >
-                <Td align='center' displayFrom='md'>
-                  { asset.rank }
-                </Td>
+                {asset.rank}
+              </Td>
 
-                <Td align='left'>
-                  <img 
-                    className="inline-block w-7 h-7 sm:w-6 sm:h-6 align-middle"
-                    src={`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`} 
-                    alt={asset.name}
-                  />
+              <Td align='left'>
+                <img
+                  className='inline-block h-7 w-7 align-middle sm:h-6 sm:w-6'
+                  src={`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`}
+                  alt={asset.name}
+                />
 
-                  <div className="inline-block align-middle ml-2">
-                    <Link
-                      className="inline-block hover:underline text-orange-600"
-                      to={ `/coins/${asset.id}` }
-                    >
-                      { asset.name }
-                    </Link>
-                    <small className="block text-gray-500">
-                      { asset.symbol }
-                    </small>
-                  </div>
-                </Td>
-
-                <Td className=''>
-                  { formatter.toUSDollar({ value: Number(asset.priceUsd )}) }
-                </Td>
-
-                <Td displayFrom='md'>
-                  { formatter.toCompactUSDollar({ value: Number(asset.marketCapUsd) }) }
-                </Td>
-
-                <Td className={ Number(asset.changePercent24Hr) < 0 ? 'text-red-600' : 'text-green-600' }>
-                  { formatter.toPercentage({ value: Number(asset.changePercent24Hr) }) }
-                </Td>
-
-                <Td displayFrom='md'>
-                  <ActionButton 
-                    to={ `/coins/${asset.id}` }
-                    aria-label={`Go to ${asset.name} page`}
+                <div className='ml-2 inline-block align-middle'>
+                  <Link
+                    className='inline-block text-orange-600 hover:underline'
+                    to={`/coins/${asset.id}`}
                   >
-                    <span>Details</span>
-                  </ActionButton>
-                </Td>
-              </tr>
-            )
-          })
-        } 
+                    {asset.name}
+                  </Link>
+                  <small className='block text-gray-500'>{asset.symbol}</small>
+                </div>
+              </Td>
+
+              <Td className=''>{formatter.toUSDollar({ value: Number(asset.priceUsd) })}</Td>
+
+              <Td displayFrom='md'>
+                {formatter.toCompactUSDollar({
+                  value: Number(asset.marketCapUsd)
+                })}
+              </Td>
+
+              <Td className={Number(asset.changePercent24Hr) < 0 ? 'text-red-600' : 'text-green-600'}>
+                {formatter.toPercentage({
+                  value: Number(asset.changePercent24Hr)
+                })}
+              </Td>
+
+              <Td displayFrom='md'>
+                <ActionButton
+                  to={`/coins/${asset.id}`}
+                  aria-label={`Go to ${asset.name} page`}
+                >
+                  <span>Details</span>
+                </ActionButton>
+              </Td>
+            </tr>
+          )
+        })}
       </tbody>
     </Table>
   )

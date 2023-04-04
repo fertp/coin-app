@@ -1,12 +1,12 @@
-import { FC, useEffect } from "react"
-import { useLocation } from "react-router-dom"
-import { SearchProvider } from "./context/searchContext"
-import { InputSearch } from "./components/InputSearch"
-import { SearchResults } from "./components/ResultsList"
-import { useSearchContext } from "./hooks/useSearchContext"
-import useOnClickOutside from "../../hooks/useOnClickOutside"
+import { type FC, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { SearchProvider } from './context/searchContext'
+import { InputSearch } from './components/InputSearch'
+import { SearchResults } from './components/ResultsList'
+import { useSearchContext } from './hooks/useSearchContext'
+import useOnClickOutside from '../../hooks/useOnClickOutside'
 
-export const SearchBar:FC = () => {
+export const SearchBar: FC = () => {
   return (
     <SearchProvider>
       <Child />
@@ -14,22 +14,27 @@ export const SearchBar:FC = () => {
   )
 }
 
-
-const Child = () => {
-
+const Child: FC = () => {
   const { query, dispatcher } = useSearchContext()
 
-  const ref = useOnClickOutside(() => dispatcher.closeInput())
-  
+  const ref = useOnClickOutside(() => {
+    dispatcher.closeInput()
+  })
+
   const location = useLocation()
-  
-  useEffect(() => dispatcher.closeInput() , [location])
+
+  useEffect(() => {
+    dispatcher.closeInput()
+  }, [location])
 
   return (
-    <div ref={ref} className="relative">
+    <div
+      ref={ref}
+      className='relative'
+    >
       <InputSearch />
 
-      { !!query && <SearchResults /> }
+      {query !== '' && <SearchResults />}
     </div>
   )
 }
