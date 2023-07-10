@@ -6,7 +6,7 @@ import { NavigationLink } from './NavigationLink'
 import { ResponsiveButton } from './ResponsiveButton'
 import { NavigationContext, NavigationProvider } from './context/NavigationContext'
 import { ResponsiveNavigationLink } from './ResponsiveNavigationLink'
-import { SearchBar } from '../SearchBar'
+import { SearchBar } from '../../../SearchBar'
 
 interface Props {
   links: Route[]

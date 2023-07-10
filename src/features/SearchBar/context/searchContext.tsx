@@ -1,9 +1,8 @@
 import { type FC, createContext, useReducer, useRef } from 'react'
 import { initialState, searchReducer } from '../reducer/searchReducer'
-import type { ISearchContext, ProviderProps } from '../interfaces'
+import type { ISearchContext, ProviderProps } from '../types'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-export const SearchContext = createContext({} as ISearchContext)
+export const SearchContext = createContext<ISearchContext | null>(null)
 
 export const SearchProvider: FC<ProviderProps> = ({ children }) => {
   const [searchState, dispatch] = useReducer(searchReducer, initialState)

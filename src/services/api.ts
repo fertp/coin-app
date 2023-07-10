@@ -39,7 +39,8 @@ export const coincapApi = createApi({
       providesTags: ['Exchanges']
     }),
 
-    getAllExchanges: builder.query<{ data: Exchange[] }, undefined>({
+    // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
+    getAllExchanges: builder.query<{ data: Exchange[] }, void>({
       query: () => '/exchanges'
     }),
 
@@ -62,5 +63,6 @@ export const {
   useGetExcahngeByIdQuery,
   useGetExchangeMarketsQuery,
   useGetAllExchangesQuery,
+  useLazyGetAllExchangesQuery,
   useLazySearchAssetsByIdQuery
 } = coincapApi

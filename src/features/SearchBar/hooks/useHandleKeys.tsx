@@ -1,6 +1,6 @@
-import { useContext, useEffect } from 'react'
-import { SearchContext } from '../context/searchContext'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSearchContext } from './useSearchContext'
 
 interface Args {
   current: Array<{ index: number; to: string; name: string } | undefined>
@@ -9,10 +9,15 @@ interface Args {
 export const useHandleKeys = (indexesListRef: Args): void => {
   const navigate = useNavigate()
 
-  const { selected, dispatcher, inputRef } = useContext(SearchContext)
+  const { selected, dispatcher, inputRef } = useSearchContext()
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        dispatcher.closeInput()
+        inputRef.current?.blur()
+      }
       if (e.key === 'ArrowUp') {
         e.preventDefault()
         dispatcher.decrementSelected()
