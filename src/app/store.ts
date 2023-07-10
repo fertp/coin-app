@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { coincapApi } from '@/services/api'
-import assetSlice from '@/features/public/slices/assetSlice'
+import assetSlice from '@/features/guest/slices/assetSlice'
 
 export const store = configureStore({
   reducer: {

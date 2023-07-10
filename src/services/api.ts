@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-invalid-void-type */
-import { type Asset, type AssetHistory, type AssetMarket, type Exchange, type ExchangeMarket } from '@/interfaces/interfaces'
+import type { Asset, AssetHistory, AssetMarket, Exchange, ExchangeMarket } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { API_URL as url } from '@/data/constants'
-import { getHistoryParams, type timeRange } from '@/features/public/pages/Coin/utils/timeRange'
+import { getHistoryParams, type timeRange } from '@/features/guest/pages/Coin/utils/timeRange'
 
 export const coincapApi = createApi({
   reducerPath: 'coincapApi',
@@ -40,7 +39,7 @@ export const coincapApi = createApi({
       providesTags: ['Exchanges']
     }),
 
-    getAllExchanges: builder.query<{ data: Exchange[] }, void>({
+    getAllExchanges: builder.query<{ data: Exchange[] }, undefined>({
       query: () => '/exchanges'
     }),
 
