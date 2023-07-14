@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { PublicLayout, publicRoutes } from './features/guest'
+import { PublicLayout, publicRoutes } from './modules/guest'
 
 export default function App(): JSX.Element {
   return (

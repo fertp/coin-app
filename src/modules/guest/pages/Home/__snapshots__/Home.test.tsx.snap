@@ -1,0 +1,1330 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home page > When it mounts by default > Should display a loading spinner while data is fetched then render correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="container mx-auto my-8 sm:my-12 md:my-20 xl:max-w-6xl"
+    >
+      <table
+        aria-label="Assets list"
+        class="w-full "
+      >
+        <colgroup>
+          <col />
+          <col
+            class="min-w-fit"
+          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr
+            class="border-b-2 border-gray-200 bg-gray-100"
+          >
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-center hidden md:table-cell "
+            >
+              <span
+                aria-label="Sort assets ascendent"
+                role="button"
+              >
+                <span
+                  class="underline"
+                >
+                  Rank
+                </span>
+                 
+                👆🏾
+              </span>
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-left false "
+            >
+              Name
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false "
+            >
+              Price
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right hidden md:table-cell "
+            >
+              Market Cap
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false "
+            >
+              <span
+                class="hidden sm:inline"
+              >
+                Change
+                 
+              </span>
+              <span>
+                (24Hr)
+              </span>
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right hidden md:table-cell "
+            >
+               
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            aria-rowindex="101"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              101
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Decred"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/dcr@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/decred"
+                >
+                  Decred
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  DCR
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $15.23
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $233.50m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -0.75%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Decred page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/decred"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="102"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              102
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="yearn.finance"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/yfi@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/yearn-finance"
+                >
+                  yearn.finance
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  YFI
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $6,939.87
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $229.27m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -0.35%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to yearn.finance page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/yearn-finance"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="103"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              103
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Waves"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/waves@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/waves"
+                >
+                  Waves
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  WAVES
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $2.02
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $226.61m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -2.74%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Waves page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/waves"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="104"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              104
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Holo"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/hot@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/holo"
+                >
+                  Holo
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  HOT
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.00
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $220.78m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -1.78%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Holo page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/holo"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="105"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              105
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Ocean Protocol"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/ocean@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/ocean-protocol"
+                >
+                  Ocean Protocol
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  OCEAN
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.36
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $218.70m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -0.92%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Ocean Protocol page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/ocean-protocol"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="106"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              106
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Helium"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/hnt@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/helium"
+                >
+                  Helium
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  HNT
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $1.52
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $218.64m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              5.23%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Helium page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/helium"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="107"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              107
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Blox"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/cdt@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/blox"
+                >
+                  Blox
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  CDT
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.22
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $217.33m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              1.53%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Blox page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/blox"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="108"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              108
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="ICON"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/icx@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/icon"
+                >
+                  ICON
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  ICX
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.22
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $214.05m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              3.19%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to ICON page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/icon"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="109"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              109
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="JUST"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/jst@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/just"
+                >
+                  JUST
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  JST
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.02
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $209.18m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              2.69%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to JUST page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/just"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="110"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              110
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Kusama"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/ksm@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/kusama"
+                >
+                  Kusama
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  KSM
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $23.71
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $200.80m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              0.33%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Kusama page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/kusama"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="111"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              111
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Golem"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/glm@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/golem-network-tokens"
+                >
+                  Golem
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  GLM
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.20
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $196.48m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -1.92%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Golem page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/golem-network-tokens"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="112"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              112
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="NXM"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/nxm@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/nxm"
+                >
+                  NXM
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  NXM
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $29.07
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $191.70m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -1.21%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to NXM page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/nxm"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="113"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              113
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Arweave"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/ar@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/arweave"
+                >
+                  Arweave
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  AR
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $5.69
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $189.88m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -3.11%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Arweave page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/arweave"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="114"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              114
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Audius"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/audio@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/audius"
+                >
+                  Audius
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  AUDIO
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.18
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $188.92m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -0.34%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Audius page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/audius"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="115"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              115
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Symbol"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/xym@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/symbol"
+                >
+                  Symbol
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  XYM
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.03
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $181.05m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              8.89%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Symbol page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/symbol"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="116"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              116
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Siacoin"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/sc@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/siacoin"
+                >
+                  Siacoin
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  SC
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.00
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $180.37m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -0.54%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Siacoin page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/siacoin"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="117"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              117
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="IoTeX"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/iotx@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/iotex"
+                >
+                  IoTeX
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  IOTX
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.02
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $176.60m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -1.34%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to IoTeX page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/iotex"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="118"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              118
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Fetch.ai"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/fet@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/fetch"
+                >
+                  Fetch.ai
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  FET
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.21
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $176.48m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              0.70%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Fetch.ai page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/fetch"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="119"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              119
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="0x Protocol"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/zrx@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/0x"
+                >
+                  0x Protocol
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  ZRX
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.21
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $176.30m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-green-600"
+            >
+              0.55%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to 0x Protocol page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/0x"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="120"
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
+            >
+              120
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <img
+                alt="Hive"
+                class="inline-block h-7 w-7 align-middle sm:h-6 sm:w-6"
+                src="https://static.coincap.io/assets/icons/hive@2x.png"
+              />
+              <div
+                class="ml-2 inline-block align-middle"
+              >
+                <a
+                  class="inline-block text-orange-600 hover:underline"
+                  href="/coins/hive-blockchain"
+                >
+                  Hive
+                </a>
+                <small
+                  class="block text-gray-500"
+                >
+                  HIVE
+                </small>
+              </div>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $0.35
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              $174.32m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right text-red-600"
+            >
+              -0.33%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-right "
+            >
+              <a
+                aria-label="Go to Hive page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+                href="/coins/hive-blockchain"
+              >
+                <span>
+                  Details
+                </span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button
+        class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 mx-auto mt-12"
+      >
+        View More
+      </button>
+    </div>
+  </div>
+</div>
+`;

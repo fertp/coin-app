@@ -1,7 +1,7 @@
 import type { Asset, AssetHistory, AssetMarket, Exchange, ExchangeMarket } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { API_URL as url } from '@/data/constants'
-import { getHistoryParams, type timeRange } from '@/features/guest/pages/Coin/utils/timeRange'
+import { getHistoryParams, type timeRange } from '@/modules/guest/pages/Coin/utils/timeRange'
 
 export const coincapApi = createApi({
   reducerPath: 'coincapApi',
@@ -11,7 +11,10 @@ export const coincapApi = createApi({
   tagTypes: ['Assets', 'Exchanges'],
   endpoints: builder => ({
     getAssets: builder.query<{ data: Asset[] }, number>({
-      query: limit => `/assets?offset=0&limit=${limit}`,
+      query: limit => ({
+        url: `/assets`,
+        params: { offset: 0, limit }
+      }),
       providesTags: ['Assets']
     }),
 
@@ -22,20 +25,23 @@ export const coincapApi = createApi({
     getAssetHistory: builder.query<{ data: AssetHistory[] }, { id: string; timeRange: timeRange }>({
       query: ({ id, timeRange }) => {
         const { interval, start, end } = getHistoryParams(timeRange)
-        return `/assets/${id}/history?interval=${interval}&start=${start}&end=${end}`
+        return {
+          url: `/assets/${id}/history`,
+          params: { interval, start, end }
+        }
       }
     }),
 
     getAssetMarkets: builder.query<{ data: AssetMarket[] }, { id: string; limit: number }>({
-      query: ({ id, limit }) => `/assets/${id}/markets?limit=${limit}`
+      query: ({ id, limit }) => ({ url: `/assets/${id}/markets`, params: { limit } })
     }),
 
     searchAssetsById: builder.query<{ data: Asset[] }, { query: string; limit: number }>({
-      query: ({ query, limit }) => `/assets?search=${query}&limit=${limit}`
+      query: ({ query, limit }) => ({ url: `/assets`, params: { query, limit } })
     }),
 
     getExchanges: builder.query<{ data: Exchange[] }, number>({
-      query: limit => `/exchanges?offset=0&limit=${limit}`,
+      query: limit => ({ url: `/exchanges`, params: { offset: 0, limit } }),
       providesTags: ['Exchanges']
     }),
 
@@ -49,7 +55,7 @@ export const coincapApi = createApi({
     }),
 
     getExchangeMarkets: builder.query<{ data: ExchangeMarket[] }, string>({
-      query: id => `/markets?exchangeId=${id}&offset=0&limit=20`
+      query: id => ({ url: `/markets`, params: { exchangeId: id, offset: 0, limit: 20 } })
     })
   })
 })
