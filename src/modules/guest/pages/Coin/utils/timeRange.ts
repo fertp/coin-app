@@ -10,7 +10,19 @@ type daysMap = {
   [key in timeRange]: number
 }
 
+type LabelsMap = {
+  [key in timeRange]: string
+}
+
 export const timeRanges: timeRange[] = ['1d', '1w', '1m', '6m', '1y']
+
+export const labelsMap: LabelsMap = {
+  '1d': 'last day',
+  '1w': 'last week',
+  '1m': 'last month',
+  '6m': 'last six months',
+  '1y': 'last year'
+}
 
 export const getHistoryParams = (time: timeRange): { interval: string; start: string; end: string } => {
   const intervalsMap: intervalMap = {

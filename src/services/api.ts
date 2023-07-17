@@ -37,7 +37,7 @@ export const coincapApi = createApi({
     }),
 
     searchAssetsById: builder.query<{ data: Asset[] }, { query: string; limit: number }>({
-      query: ({ query, limit }) => ({ url: `/assets`, params: { query, limit } })
+      query: ({ query, limit }) => ({ url: `/assets`, params: { search: query, limit } })
     }),
 
     getExchanges: builder.query<{ data: Exchange[] }, number>({

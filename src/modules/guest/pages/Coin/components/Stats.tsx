@@ -49,7 +49,10 @@ export const Stats: FC<Props> = ({ id }) => {
 
   return (
     <div>
-      <ul className='grid max-w-xs grid-cols-2 gap-x-8 gap-y-4 sm:max-w-sm sm:grid-cols-3 md:max-w-none'>
+      <ul
+        aria-label={`${asset?.name} stats`}
+        className='grid max-w-xs grid-cols-2 gap-x-8 gap-y-4 sm:max-w-sm sm:grid-cols-3 md:max-w-none'
+      >
         {items.map(({ name, value }) => (
           <li
             key={name}

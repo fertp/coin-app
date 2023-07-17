@@ -19,14 +19,14 @@ export const Coin: FC = () => {
 
   const { timeRange } = useAppSelector(state => state.asset)
 
-  // TODO: Optimize this to reduce renders
-  const { data: asset, error: assetError, isLoading: isAssetLoading } = useGetAssetByIdQuery(id)
-  const { isLoading: isHistoryLoading } = useGetAssetHistoryQuery({
+  /** @todo Optimize this to reduce renders */
+  const assetQuery = useGetAssetByIdQuery(id)
+  const assetHistoryQuery = useGetAssetHistoryQuery({
     id,
     timeRange
   })
 
-  if (assetError != null) {
+  if (assetQuery.isError) {
     // TODO: Check status 404
     return (
       <Container>
@@ -35,7 +35,7 @@ export const Coin: FC = () => {
     )
   }
 
-  if (isAssetLoading || isHistoryLoading) {
+  if (assetQuery.isLoading || assetHistoryQuery.isLoading) {
     return (
       <Loader
         color='#ea580c'
@@ -48,7 +48,7 @@ export const Coin: FC = () => {
     <Container>
       <section className='px-4 sm:px-8 lg:px-0'>
         <div className='flex flex-col flex-wrap gap-8 md:flex-row md:items-center lg:gap-20'>
-          <Title asset={asset?.data} />
+          <Title asset={assetQuery.data?.data} />
 
           <Stats id={id} />
         </div>

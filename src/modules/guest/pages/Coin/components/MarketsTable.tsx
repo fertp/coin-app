@@ -27,7 +27,10 @@ export const MarketsTable: FC<Props> = ({ id }) => {
   const markets = data?.data
 
   return (
-    <Table className='mt-8 md:mt-12'>
+    <Table
+      ariaLabel='Markets table'
+      className='mt-8 md:mt-12'
+    >
       <colgroup>
         <col />
         <col className='min-w-fit' />

@@ -3,7 +3,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 import { Line } from 'react-chartjs-2'
 import { useAppSelector } from '@/app/hooks'
 import { useGetAssetHistoryQuery } from '@/services/api'
-import { getTimeLabel, reduceIntervals } from '../utils/timeRange'
+import { getTimeLabel, labelsMap, reduceIntervals } from '../utils/timeRange'
 
 interface Props {
   id: string
@@ -42,6 +42,7 @@ export const Chart: FC<Props> = ({ id }) => {
   return (
     <div className='mt-8 md:mt-12'>
       <Line
+        aria-label={`${labelsMap[timeRange]} asset history chart`}
         options={options}
         data={data}
         height={196}

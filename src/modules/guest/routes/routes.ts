@@ -1,6 +1,6 @@
 import { Home } from '../pages/Home'
-import { Coin } from '../pages/Coin/Coin'
-import { Exchanges } from '../pages/Exchanges/Exchanges'
+import { Coin } from '../pages/Coin'
+import { Exchanges } from '../pages/Exchanges'
 import { Exchange } from '../pages/Exchange/Exchange'
 import type { Route } from '@/types'
 

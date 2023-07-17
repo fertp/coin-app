@@ -10,7 +10,7 @@ interface Props {
 
 export const ExchangesTable: FC<Props> = ({ exchanges }) => {
   return (
-    <Table>
+    <Table ariaLabel='Exchanges list'>
       <colgroup>
         <col />
         <col className='min-w-fit' />
@@ -83,7 +83,7 @@ export const ExchangesTable: FC<Props> = ({ exchanges }) => {
               align='center'
               className='hidden md:table-cell'
             >
-              {e.socket ? '🟢' : '⚪'}
+              {e.socket !== null && e.socket ? '🟢' : '⚪'}
             </Td>
 
             <Td className='hidden md:table-cell'>
@@ -93,7 +93,7 @@ export const ExchangesTable: FC<Props> = ({ exchanges }) => {
                 aria-label={`Go to ${e.name} page`}
                 className='my-1 inline-block'
               >
-                <span>Details</span>
+                Details
               </ActionButton>
               {/* </span> */}
             </Td>

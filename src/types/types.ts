@@ -59,10 +59,10 @@ export interface Exchange {
   exchangeId: string
   exchangeUrl: string
   name: string
-  percentTotalVolume: string
+  percentTotalVolume: string | null
   rank: string
-  socket: boolean
+  socket: boolean | null
   tradingPairs: string
   updated: number
-  volumeUsd: string
+  volumeUsd: string | null
 }

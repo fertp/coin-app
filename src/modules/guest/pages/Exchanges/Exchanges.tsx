@@ -6,7 +6,7 @@ import { ExchangesTable } from './components'
 export const Exchanges: FC = () => {
   const [limit, setLimit] = useState<number>(20)
 
-  const { data, isLoading, isFetching } = useGetExchangesQuery(limit)
+  const { data, isLoading, isFetching, error } = useGetExchangesQuery(limit)
 
   const handleViewMore = (): void => {
     setLimit(prev => prev + 20)
@@ -19,6 +19,10 @@ export const Exchanges: FC = () => {
         fullScreen
       />
     )
+  }
+
+  if (error !== undefined) {
+    return <div>Ups, an error has ocurred!</div>
   }
 
   return (

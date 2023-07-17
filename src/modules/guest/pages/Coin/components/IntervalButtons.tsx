@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { timeRanges } from '../utils/timeRange'
+import { timeRanges, labelsMap } from '../utils/timeRange'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import { Button } from '@/modules/guest/components'
 import { setTimeRange } from '@/modules/guest/slices/assetSlice'
@@ -18,13 +18,17 @@ export const IntervalButtons: FC<Props> = ({ id }) => {
   const { isFetching } = useGetAssetHistoryQuery({ id, timeRange })
 
   return (
-    <div className='mt-4 flex gap-2'>
+    <div
+      aria-label='Select an interval'
+      className='mt-4 flex gap-2'
+    >
       {timeRanges.map(item => (
         <Button
           key={item}
-          handleClick={() => dispatch(setTimeRange(item))}
+          ariaLabel={labelsMap[item]}
           selected={timeRange === item}
           className='relative'
+          handleClick={() => dispatch(setTimeRange(item))}
         >
           <>
             {timeRange === item && isFetching && (

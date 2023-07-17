@@ -1,18 +1,25 @@
-import type { RenderResult } from '@testing-library/react'
-import { act, getAllByRole, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
-import { Home } from './Home'
+import { API_URL } from '@/data/constants'
+import { server } from '@/test/mock/server'
+import { rest } from 'msw'
+import { Exchanges } from './Exchanges'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from '@/app/store'
-import { rest } from 'msw'
-import { API_URL } from '@/data/constants'
-import { BrowserRouter } from 'react-router-dom'
+import {
+  act,
+  render,
+  waitFor,
+  type RenderResult,
+  screen,
+  waitForElementToBeRemoved,
+  getAllByRole
+} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { server } from '@/test/mock/server'
 
 const Component = (): JSX.Element => (
   <Provider store={store}>
     <BrowserRouter>
-      <Home />
+      <Exchanges />
     </BrowserRouter>
   </Provider>
 )
@@ -32,15 +39,15 @@ const renderAndClickViewMoreButton = async (): Promise<void> => {
   await act(async () => {
     render(<Component />)
   })
-  await screen.findByRole('table', { name: /assets list/i })
+  await screen.findByRole('table', { name: /exchanges list/i })
   await userEvent.click(screen.getByRole('button', { name: /view more/i }))
 }
 
-describe('Home page', () => {
+describe('Exchanges page', () => {
   describe('When the request is failed', () => {
     it('Should display an error message', async () => {
       server.use(
-        rest.get(`${API_URL}/assets`, (req, res, ctx) => {
+        rest.get(`${API_URL}/exchanges`, (req, res, ctx) => {
           res.networkError('Failed to connect')
         })
       )
@@ -102,7 +109,7 @@ describe('Home page', () => {
       await waitFor(() => {
         expect(screen.queryByRole('status', { name: /loading/i })).not.toBeInTheDocument()
       })
-      const table = screen.getByRole('table', { name: /assets list/i })
+      const table = screen.getByRole('table', { name: /exchanges list/i })
       const rows = getAllByRole(table, 'row')
       expect(rows.length).toBe(40 + 1)
     })
