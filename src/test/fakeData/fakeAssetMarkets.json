@@ -1,0 +1,142 @@
+[
+  {
+    "exchangeId": "Binance",
+    "baseId": "decred",
+    "quoteId": "tether",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "USDT",
+    "volumeUsd24Hr": "153394.2824812312337140",
+    "priceUsd": "14.7975479608171825",
+    "volumePercent": "54.9542229515574741"
+  },
+  {
+    "exchangeId": "Exmo",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "34285.7463123896894269",
+    "priceUsd": "14.7208655762110972",
+    "volumePercent": "12.2830298263700918"
+  },
+  {
+    "exchangeId": "Huobi",
+    "baseId": "decred",
+    "quoteId": "tether",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "USDT",
+    "volumeUsd24Hr": "30815.8254567591106246",
+    "priceUsd": "14.9061767804212870",
+    "volumePercent": "11.0399143644367982"
+  },
+  {
+    "exchangeId": "Binance",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "26110.0845007343903978",
+    "priceUsd": "14.8142071251705049",
+    "volumePercent": "9.3540605407696801"
+  },
+  {
+    "exchangeId": "Gate",
+    "baseId": "decred",
+    "quoteId": "tether",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "USDT",
+    "volumeUsd24Hr": "12214.7454304353761501",
+    "priceUsd": "14.8195740809212405",
+    "volumePercent": "4.3759899836083881"
+  },
+  {
+    "exchangeId": "CoinEx",
+    "baseId": "decred",
+    "quoteId": "tether",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "USDT",
+    "volumeUsd24Hr": "7287.1880295782649483",
+    "priceUsd": "14.7373766054420057",
+    "volumePercent": "2.6106693756096406"
+  },
+  {
+    "exchangeId": "Kucoin",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "3872.6512846346765472",
+    "priceUsd": "14.7283931204820172",
+    "volumePercent": "1.3873955317434284"
+  },
+  {
+    "exchangeId": "Gate",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "3390.2506734832056860",
+    "priceUsd": "14.7840969480868250",
+    "volumePercent": "1.2145732445735714"
+  },
+  {
+    "exchangeId": "CoinEx",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "2732.1426997458530170",
+    "priceUsd": "14.8551569660043095",
+    "volumePercent": "0.9788029685896192"
+  },
+  {
+    "exchangeId": "Kucoin",
+    "baseId": "decred",
+    "quoteId": "ethereum",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "ETH",
+    "volumeUsd24Hr": "2667.6161066244699897",
+    "priceUsd": "14.7159577292484789",
+    "volumePercent": "0.9556860132028968"
+  },
+  {
+    "exchangeId": "WazirX",
+    "baseId": "decred",
+    "quoteId": "indian-rupee",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "INR",
+    "volumeUsd24Hr": "71.4939579279036025",
+    "priceUsd": "15.8449409206142600",
+    "volumePercent": "0.0256130465888780"
+  },
+  {
+    "exchangeId": "HitBTC",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "0.0000000000000000",
+    "priceUsd": "14.3685765043320426",
+    "volumePercent": "0.0000000000000000"
+  },
+  {
+    "exchangeId": "Poloniex",
+    "baseId": "decred",
+    "quoteId": "bitcoin",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "BTC",
+    "volumeUsd24Hr": "0.0000000000000000",
+    "priceUsd": "14.9647580105889043",
+    "volumePercent": "0.0000000000000000"
+  },
+  {
+    "exchangeId": "HitBTC",
+    "baseId": "decred",
+    "quoteId": "tether",
+    "baseSymbol": "DCR",
+    "quoteSymbol": "USDT",
+    "volumeUsd24Hr": "0.0000000000000000",
+    "priceUsd": "15.5672607397262657",
+    "volumePercent": "0.0000000000000000"
+  }
+]

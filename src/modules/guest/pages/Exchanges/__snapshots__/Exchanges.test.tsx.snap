@@ -1,0 +1,1181 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Exchanges page > When it mounts by default > Should display a loading spinner while data is fetched then render correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="container mx-auto my-8 sm:my-12 md:my-20 xl:max-w-6xl"
+    >
+      <table
+        aria-label="Exchanges list"
+        class="w-full "
+      >
+        <colgroup>
+          <col />
+          <col
+            class="min-w-fit"
+          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr
+            class="border-b-2 border-gray-200 bg-gray-100"
+          >
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-center false hidden md:table-cell"
+            >
+              Rank
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-left false "
+            >
+              Name
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false "
+            >
+              Trading Pairs
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false hidden md:table-cell"
+            >
+              Top Pairs
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false "
+            >
+              Volume (24Hr)
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false hidden md:table-cell"
+            >
+              Total (%)
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-center false hidden md:table-cell"
+            >
+              Status
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false hidden md:table-cell"
+            >
+               
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              11
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/huobi"
+              >
+                Huobi
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              247
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $454.20m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              2.04%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              🟢
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Huobi page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/huobi"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              12
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/cointiger"
+              >
+                CoinTiger
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              104
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $452.45m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              2.03%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to CoinTiger page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/cointiger"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              13
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/tidex"
+              >
+                Tidex
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              21
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $305.45m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.37%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Tidex page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/tidex"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              14
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitstamp"
+              >
+                Bitstamp
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              99
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $280.16m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.26%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              🟢
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bitstamp page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitstamp"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              15
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitfinex"
+              >
+                Bitfinex
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              198
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $223.05m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.00%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              🟢
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bitfinex page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitfinex"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              16
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/currency-com"
+              >
+                Currency.com
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              66
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $180.83m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.81%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Currency.com page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/currency-com"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              17
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitmax"
+              >
+                AscendEX (Bitmax)
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              199
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $169.08m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.76%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to AscendEX (Bitmax) page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitmax"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              18
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/btcturk"
+              >
+                BTCTurk
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              97
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $168.91m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.76%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to BTCTurk page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/btcturk"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              19
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bigone"
+              >
+                BigONE
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              67
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $154.14m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.69%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to BigONE page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bigone"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              20
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bibox"
+              >
+                Bibox
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              158
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $120.81m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.54%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bibox page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bibox"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              21
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/yobit"
+              >
+                YoBit
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              58
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $107.56m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.48%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to YoBit page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/yobit"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              22
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/dex-trade"
+              >
+                Dex-Trade
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              117
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $106.79m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.48%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Dex-Trade page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/dex-trade"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              23
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/crypto"
+              >
+                Crypto.com Exchange
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              128
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $73.66m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.33%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Crypto.com Exchange page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/crypto"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              24
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/probit"
+              >
+                ProBit
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              407
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $73.11m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.33%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to ProBit page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/probit"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              25
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitbank"
+              >
+                Bitbank
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              5
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $67.71m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.30%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bitbank page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitbank"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              26
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/exmo"
+              >
+                Exmo
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              134
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $64.85m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.29%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Exmo page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/exmo"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              27
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/coincheck"
+              >
+                coincheck
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              1
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $58.97m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.27%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to coincheck page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/coincheck"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              28
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitflyer"
+              >
+                Bitflyer
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              4
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $50.32m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.23%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bitflyer page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitflyer"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              29
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitkub"
+              >
+                Bitkub
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              45
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $43.20m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.19%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              ⚪
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bitkub page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitkub"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              30
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              <a
+                class="inline-block text-orange-600 hover:underline"
+                href="/exchanges/bitso"
+              >
+                Bitso
+              </a>
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              27
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              -
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $41.32m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.19%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              🟢
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              <a
+                aria-label="Go to Bitso page"
+                class="rounded border border-orange-500 bg-transparent py-1 px-2 font-normal text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white my-1 inline-block"
+                href="/exchanges/bitso"
+              >
+                Details
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button
+        class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 mx-auto mt-12"
+      >
+        View More
+      </button>
+    </div>
+  </div>
+</div>
+`;

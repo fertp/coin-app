@@ -1,0 +1,204 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Coin page > When it mounts by default with a valid id param > Should render correctly and display a spinner while fetching the data 1`] = `
+<div>
+  <div>
+    <div
+      class="container mx-auto my-8 sm:my-12 md:my-20 xl:max-w-6xl"
+    >
+      <section
+        class="px-4 sm:px-8 lg:px-0"
+      >
+        <div
+          class="flex flex-col flex-wrap gap-8 md:flex-row md:items-center lg:gap-20"
+        >
+          <div
+            class="flex items-center"
+          >
+            <img
+              alt="Decred"
+              class="h-20 w-20"
+              src="https://static.coincap.io/assets/icons/dcr@2x.png"
+            />
+            <div
+              class="ml-6 sm:ml-8"
+            >
+              <h1
+                class="text-2xl sm:text-3xl"
+              >
+                Decred
+                 
+                <small
+                  class="text-gray-500"
+                >
+                  (
+                  DCR
+                  )
+                </small>
+              </h1>
+              <span
+                class="mt-2 text-gray-500"
+              >
+                17 July 2023
+              </span>
+            </div>
+          </div>
+          <div>
+            <ul
+              aria-label="Decred stats"
+              class="grid max-w-xs grid-cols-2 gap-x-8 gap-y-4 sm:max-w-sm sm:grid-cols-3 md:max-w-none"
+            >
+              <li
+                class="flex items-center"
+              >
+                <span
+                  class="mr-4 text-xs uppercase text-gray-600"
+                >
+                  Rank
+                </span>
+                <span>
+                  101
+                </span>
+              </li>
+              <li
+                class="flex items-center"
+              >
+                <span
+                  class="mr-4 text-xs uppercase text-gray-600"
+                >
+                  Price
+                </span>
+                <span>
+                  $15.23
+                </span>
+              </li>
+              <li
+                class="flex items-center"
+              >
+                <span
+                  class="mr-4 text-xs uppercase text-gray-600"
+                >
+                  High
+                </span>
+                <span>
+                  $15.53
+                </span>
+              </li>
+              <li
+                class="flex items-center"
+              >
+                <span
+                  class="mr-4 text-xs uppercase text-gray-600"
+                >
+                  Low
+                </span>
+                <span>
+                  $15.11
+                </span>
+              </li>
+              <li
+                class="flex items-center"
+              >
+                <span
+                  class="mr-4 text-xs uppercase text-gray-600"
+                >
+                  Average
+                </span>
+                <span>
+                  $15.34
+                </span>
+              </li>
+              <li
+                class="flex items-center"
+              >
+                <span
+                  class="mr-4 text-xs uppercase text-gray-600"
+                >
+                  Change
+                </span>
+                <span>
+                  -0.75%
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-8 md:mt-12"
+        />
+        <div
+          aria-label="Select an interval"
+          class="mt-4 flex gap-2"
+        >
+          <button
+            aria-label="last day"
+            class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-orange-500 text-white relative"
+          >
+            <span
+              class="false"
+            >
+              1d
+            </span>
+          </button>
+          <button
+            aria-label="last week"
+            class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 relative"
+          >
+            <span
+              class="false"
+            >
+              1w
+            </span>
+          </button>
+          <button
+            aria-label="last month"
+            class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 relative"
+          >
+            <span
+              class="false"
+            >
+              1m
+            </span>
+          </button>
+          <button
+            aria-label="last six months"
+            class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 relative"
+          >
+            <span
+              class="false"
+            >
+              6m
+            </span>
+          </button>
+          <button
+            aria-label="last year"
+            class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 relative"
+          >
+            <span
+              class="false"
+            >
+              1y
+            </span>
+          </button>
+        </div>
+      </section>
+      <div
+        class="flex justify-center mx-auto mt-24"
+      >
+        <span
+          aria-label="Loading..."
+          role="status"
+          style="display: inherit; position: relative; width: 60px; height: 60px;"
+        >
+          <span
+            style="position: absolute; height: 60px; width: 60px; background-color: rgb(234, 88, 12); border-radius: 100%; opacity: 0.6; top: 0px; left: 0px; animation-fill-mode: both; animation: react-spinners-BounceLoader-bounce 2.1s 1s infinite ease-in-out;"
+          />
+          <span
+            style="position: absolute; height: 60px; width: 60px; background-color: rgb(234, 88, 12); border-radius: 100%; opacity: 0.6; top: 0px; left: 0px; animation-fill-mode: both; animation: react-spinners-BounceLoader-bounce 2.1s 0s infinite ease-in-out;"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

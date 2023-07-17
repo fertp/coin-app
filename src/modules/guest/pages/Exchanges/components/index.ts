@@ -1,0 +1,1 @@
+export { ExchangesTable } from './ExchangesTable'
