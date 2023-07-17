@@ -9,7 +9,10 @@ interface Props {
 
 export const MarketsTable: FC<Props> = ({ markets }) => {
   return (
-    <Table className='mt-8 md:mt-12'>
+    <Table
+      ariaLabel='Markets Table'
+      className='mt-8 md:mt-12'
+    >
       <colgroup>
         <col className='min-w-fit' />
         <col />
