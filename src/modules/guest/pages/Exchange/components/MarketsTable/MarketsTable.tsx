@@ -2,6 +2,7 @@ import { Table, Td, Th, Thead } from '@/modules/guest/components'
 import { formatter } from '@/modules/guest/utils/formatter'
 import { type ExchangeMarket } from '@/types'
 import { type FC } from 'react'
+import { COLUMN_HEADERS } from './constants'
 
 interface Props {
   markets?: ExchangeMarket[]
@@ -24,23 +25,23 @@ export const MarketsTable: FC<Props> = ({ markets }) => {
       </colgroup>
 
       <Thead>
-        <Th align='left'>Pair</Th>
+        <Th align='left'>{COLUMN_HEADERS.PAIR}</Th>
 
-        <Th>Rate</Th>
+        <Th>{COLUMN_HEADERS.RATE}</Th>
 
-        <Th className='hidden md:table-cell'>Price</Th>
+        <Th className='hidden md:table-cell'>{COLUMN_HEADERS.PRICE}</Th>
 
-        <Th>Volume (24Hr)</Th>
+        <Th>{COLUMN_HEADERS.VOLUME_24HR}</Th>
 
-        <Th className='hidden md:table-cell'>Volume (%)</Th>
+        <Th className='hidden md:table-cell'>{COLUMN_HEADERS.VOLUME_PERCENT}</Th>
 
-        <Th className='hidden md:table-cell'>Trades (24Hr)</Th>
+        <Th className='hidden md:table-cell'>{COLUMN_HEADERS.TRADES_24HR}</Th>
 
         <Th
           className='hidden md:table-cell'
           align='center'
         >
-          Status
+          {COLUMN_HEADERS.STATUS}
         </Th>
       </Thead>
 

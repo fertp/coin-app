@@ -9,7 +9,12 @@ export const Title: FC<Props> = ({ exchange }) => {
   return (
     <div className='flex gap-8 sm:gap-12'>
       <div className='flex flex-col  items-center gap-2 rounded-md bg-orange-500 px-3 py-2 text-white shadow'>
-        <span className='text-4xl'>{exchange?.rank}</span>
+        <span
+          className='text-4xl'
+          aria-label='Exchange rank'
+        >
+          {exchange?.rank}
+        </span>
 
         <span className='text-xs uppercase'>Rank</span>
       </div>
