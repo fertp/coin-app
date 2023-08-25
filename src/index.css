@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-html * {
-  /* border: 1px solid cyan; */
+@layer base {
+  html * {
+    /* border: 1px solid cyan; */
+  }
+
+  .animate-price-up {
+    animation-name: price-up;
+    animation-duration: 500ms;
+  }
+
+  .animate-price-down {
+    animation-name: price-down;
+    animation-duration: 500ms;
+  }
+}
+
+@keyframes price-up {
+  0% {
+    @apply bg-transparent;
+  }
+  25% {
+    @apply bg-green-100;
+  }
+  100% {
+    @apply bg-transparent;
+  }
+}
+
+@keyframes price-down {
+  0% {
+    @apply bg-transparent;
+  }
+  25% {
+    @apply bg-red-100;
+  }
+  100% {
+    @apply bg-transparent;
+  }
 }

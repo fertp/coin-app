@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import type { FC } from 'react'
 import { Container, Loader } from '../../components'
 import { useParams } from 'react-router-dom'
 import { Stats, Title, Chart, MarketsTable, IntervalButtons } from './components'
