@@ -79,7 +79,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
         <tbody>
           <tr
             aria-rowindex="101"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -141,7 +141,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="102"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -203,7 +203,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="103"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -265,7 +265,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="104"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -327,7 +327,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="105"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -389,7 +389,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="106"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -451,7 +451,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="107"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -513,7 +513,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="108"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -575,7 +575,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="109"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -637,7 +637,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="110"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -699,7 +699,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="111"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -761,7 +761,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="112"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -823,7 +823,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="113"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -885,7 +885,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="114"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -947,7 +947,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="115"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -1009,7 +1009,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="116"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -1071,7 +1071,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="117"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -1133,7 +1133,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="118"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -1195,7 +1195,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="119"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "
@@ -1257,7 +1257,7 @@ exports[`Home page > When it mounts by default > Should display a loading spinne
           </tr>
           <tr
             aria-rowindex="120"
-            class="border-b border-gray-200 hover:bg-orange-100"
+            class="border-b border-gray-200 transition-all hover:bg-orange-100 false"
           >
             <td
               class="py-2 px-2 text-sm font-light sm:py-1 hidden md:table-cell text-center "

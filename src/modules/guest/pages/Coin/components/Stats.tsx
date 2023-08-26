@@ -1,17 +1,28 @@
-import { type FC } from 'react'
+import { useState, type FC } from 'react'
 import { formatter } from '../../../utils/formatter'
 import { useGetAssetByIdQuery, useGetAssetHistoryQuery } from '@/services/api'
 import { useAppSelector } from '@/app/hooks'
+import { useWebSocket } from '@/hooks/useWebSocket'
+import { WS_URL } from '@/data/constants'
 
 interface Props {
   id: string
 }
 
 export const Stats: FC<Props> = ({ id }) => {
+  const [assetPrice, setAssetPrice] = useState(0)
+
   const { timeRange } = useAppSelector(state => state.asset)
 
   const { data: assetData } = useGetAssetByIdQuery(id)
   const { data: historyData } = useGetAssetHistoryQuery({ id, timeRange })
+
+  useWebSocket({
+    url: `${WS_URL}/prices?assets=${id}`,
+    onMessage: message => {
+      setAssetPrice(JSON.parse(message.data)[id])
+    }
+  })
 
   const asset = assetData?.data
   const history = historyData?.data ?? []
@@ -27,7 +38,7 @@ export const Stats: FC<Props> = ({ id }) => {
     },
     {
       name: 'Price',
-      value: formatter.toCompactUSDollar({ value: Number(asset?.priceUsd) })
+      value: formatter.toUSDollar({ value: Number(assetPrice === 0 ? asset?.priceUsd : assetPrice) })
     },
     {
       name: 'High',

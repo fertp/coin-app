@@ -1,0 +1,936 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Exchange page > When it mounts by default with a valid id param > Should render correctly and display a spinner while fetching the data 1`] = `
+<div>
+  <div>
+    <div
+      class="container mx-auto my-8 sm:my-12 md:my-20 xl:max-w-6xl"
+    >
+      <section
+        class="grid gap-8 px-8 sm:grid-cols-2 sm:place-items-center sm:gap-12 sm:px-0"
+      >
+        <div
+          class="flex gap-8 sm:gap-12"
+        >
+          <div
+            class="flex flex-col  items-center gap-2 rounded-md bg-orange-500 px-3 py-2 text-white shadow"
+          >
+            <span
+              aria-label="Exchange rank"
+              class="text-4xl"
+            >
+              11
+            </span>
+            <span
+              class="text-xs uppercase"
+            >
+              Rank
+            </span>
+          </div>
+          <div>
+            <h1
+              class="text-2xl sm:text-3xl"
+            >
+              Huobi
+            </h1>
+            <p
+              class="mt-4"
+            >
+              <span
+                class="text-2xl sm:text-3xl"
+              >
+                247
+              </span>
+                
+              <span
+                class="text-xs"
+              >
+                Pairs
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full"
+        >
+          <div
+            class="flex flex-wrap gap-8 sm:gap-16"
+          >
+            <div>
+              <span
+                class="text-xs"
+              >
+                Volume (24Hr)
+              </span>
+              <p>
+                $454,196,241
+              </p>
+            </div>
+            <div>
+              <span
+                class="text-xs"
+              >
+                Top Pair
+              </span>
+              <p>
+                BTCT/USD
+              </p>
+            </div>
+          </div>
+          <div
+            class="mt-4"
+          >
+            <a
+              class="inline-block rounded border border-orange-500 bg-transparent py-1 px-2 font-semibold text-orange-700 hover:border-transparent hover:bg-orange-500 hover:text-white undefined"
+              href="https://www.hbg.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Website
+            </a>
+          </div>
+        </div>
+      </section>
+      <table
+        aria-label="Markets Table"
+        class="w-full mt-8 md:mt-12"
+      >
+        <colgroup>
+          <col
+            class="min-w-fit"
+          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr
+            class="border-b-2 border-gray-200 bg-gray-100"
+          >
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-left false "
+            >
+              Pair
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false "
+            >
+              Rate
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false hidden md:table-cell"
+            >
+              Price
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false "
+            >
+              Volume (24Hr)
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false hidden md:table-cell"
+            >
+              Volume (%)
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-right false hidden md:table-cell"
+            >
+              Trades (24Hr)
+            </th>
+            <th
+              class="py-4 px-2 text-xs font-normal sm:py-2 text-center false hidden md:table-cell"
+            >
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              BTCT/USD
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              26838.87
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $26,838.87
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $996.91m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              26.74%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              BTC/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              26829.96
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $26,826.82
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $657.82m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              17.65%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1,646,263
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              ETH/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              1816.6
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $1,816.39
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $363.20m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              9.74%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1,650,931
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              USDC/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.9997
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $1.00
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $141.53m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              3.80%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              29,508
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              XRP/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.4618
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.46
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $119.83m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              3.21%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              479,488
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              BTCB/USD
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              26834.44
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $26,834.44
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $102.23m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              2.74%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              472,020
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              BUSD/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.9998
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $1.00
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $90.64m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              2.43%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              349,420
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              TRX/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.07823
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.08
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $67.52m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.81%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              178,720
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              TUSD/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.9995
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $1.00
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $57.37m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.54%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              4,173
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              CFX/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.3067
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.31
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $56.51m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.52%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              37,474
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              BNB/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              309
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $308.96
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $52.72m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.41%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              604,459
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              SOL/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              19.87
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $19.87
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $51.72m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.39%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              160,686
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              LTC/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              91.42
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $91.41
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $47.83m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.28%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              264,422
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              ETH/BTC
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.06771
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $1,817.07
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $47.42m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1.27%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              222,444
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              DOGE/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.07336
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.07
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $36.74m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.99%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              1,137,852
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              MATIC/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.8708
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.87
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $28.57m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.77%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              308,558
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              SHIB/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.00000879
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.00
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $26.36m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.71%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              320,210
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              ADA/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              0.3681
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $0.37
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $23.27m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.62%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              385,874
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              BTC/EUR
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              24837.13
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $26,871.20
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $21.19m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.57%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              118,149
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+          <tr
+            class="border-b border-gray-200 hover:bg-orange-100"
+          >
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-left "
+            >
+              EUR/USDT
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              1.0801
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              $1.08
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right "
+            >
+              $21.11m
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              0.57%
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-right hidden md:table-cell"
+            >
+              85,208
+            </td>
+            <td
+              class="py-2 px-2 text-sm font-light sm:py-1 false text-center hidden md:table-cell"
+            >
+              -
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

@@ -1,24 +1,36 @@
-import { type FC } from 'react'
+import { useEffect, type FC } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Table, Th, Td, Thead, ActionButton } from '@/modules/guest/components'
 import { type Asset } from '@/types'
 import { formatter } from '../../../../utils/formatter'
 import { COLUMN_HEADERS } from './constants'
+import { useWebSocket } from '@/hooks/useWebSocket'
+import { WS_URL } from '@/data/constants'
+import { reduceAssetsPrices, reduceAssetsToHighlight } from './utils'
 
 interface Props {
   assets: Asset[]
 }
 
 export const AssetsTable: FC<Props> = ({ assets }) => {
+  const [assetsPrices, setAssetsPrices] = useState(reduceAssetsPrices(assets))
+  const [assetsToHighlight, setAssetsToHighlight] = useState<Record<string, 'up' | 'down'>>({})
   const [order, setOrder] = useState<number>(1)
   const [filter] = useState<string>('')
 
-  // TODO: Trigger a request to find assets
-  // TODO: Debounce it
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setFilter(e.target.value)
-  // }
+  useWebSocket({
+    url: `${WS_URL}/prices?assets=${assets.map(({ id }) => id).join(',')}`,
+    onMessage: message => {
+      const pricesToUpdate = JSON.parse(message.data)
+      setAssetsToHighlight(reduceAssetsToHighlight(assetsPrices, pricesToUpdate))
+      setAssetsPrices(prev => ({ ...prev, ...pricesToUpdate }))
+    }
+  })
+
+  useEffect(() => {
+    setAssetsPrices(reduceAssetsPrices(assets))
+  }, [assets])
 
   const changeSortOrder = (): void => {
     setOrder(prev => prev * -1)
@@ -41,6 +53,11 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
   }
 
   const filteredAssets = filterAssets()
+
+  const rowBackgrounAnimations = {
+    up: 'animate-price-up',
+    down: 'animate-price-down'
+  }
 
   return (
     <Table ariaLabel='Assets list'>
@@ -81,17 +98,7 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
           <span>(24Hr)</span>
         </Th>
 
-        <Th displayFrom='md'>
-          {/* <input
-            value={filter}
-            onChange={handleInputChange}
-            className="bg-gray-100 focus:outline-none border-b border-gray-400 py-2 px-4 block w-full appearance-none leading-normal"
-            id="filter"
-            placeholder="Search..."
-            type="text"
-          /> */}
-          &nbsp;
-        </Th>
+        <Th displayFrom='md'>&nbsp;</Th>
       </Thead>
 
       <tbody>
@@ -100,7 +107,9 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
             <tr
               aria-rowindex={parseInt(asset.rank)}
               key={asset.name}
-              className='border-b border-gray-200 hover:bg-orange-100'
+              className={`border-b border-gray-200 transition-all hover:bg-orange-100 ${
+                asset.id in assetsToHighlight && rowBackgrounAnimations[assetsToHighlight[asset.id]]
+              }`}
             >
               <Td
                 align='center'
@@ -127,7 +136,7 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
                 </div>
               </Td>
 
-              <Td className=''>{formatter.toUSDollar({ value: Number(asset.priceUsd) })}</Td>
+              <Td className=''>{formatter.toUSDollar({ value: Number(assetsPrices[asset.id]) })}</Td>
 
               <Td displayFrom='md'>
                 {formatter.toCompactUSDollar({

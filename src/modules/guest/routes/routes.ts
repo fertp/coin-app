@@ -1,7 +1,7 @@
 import { Home } from '../pages/Home'
 import { Coin } from '../pages/Coin'
 import { Exchanges } from '../pages/Exchanges'
-import { Exchange } from '../pages/Exchange/Exchange'
+import { Exchange } from '../pages/Exchange'
 import type { Route } from '@/types'
 
 export const routes: Route[] = [

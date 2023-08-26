@@ -15,10 +15,10 @@ export const Exchange: FC = () => {
       />
     )
 
-  const { data: exchange, isLoading: isExchangeLoading } = useGetExcahngeByIdQuery(id)
-  const { data: markets, isLoading: isMarketsLoading } = useGetExchangeMarketsQuery(id)
+  const exchangeQuery = useGetExcahngeByIdQuery(id)
+  const exchangeMarketsQuery = useGetExchangeMarketsQuery(id)
 
-  if (isExchangeLoading || isMarketsLoading) {
+  if (exchangeQuery.isLoading || exchangeMarketsQuery.isLoading) {
     return (
       <Loader
         color='#ea580c'
@@ -27,16 +27,20 @@ export const Exchange: FC = () => {
     )
   }
 
-  const topMarket = markets?.data[0]
+  if (exchangeQuery.isError || exchangeMarketsQuery.isError) {
+    return <Container>Ups, an error has ocurred!</Container>
+  }
+
+  const topMarket = exchangeMarketsQuery.data?.data[0]
 
   return (
     <Container>
       <ExchangeData
-        exchange={exchange?.data}
+        exchange={exchangeQuery.data?.data}
         topMarket={topMarket}
       />
 
-      <MarketsTable markets={markets?.data} />
+      <MarketsTable markets={exchangeMarketsQuery.data?.data} />
     </Container>
   )
 }
