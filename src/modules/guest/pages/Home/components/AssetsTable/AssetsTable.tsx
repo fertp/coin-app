@@ -15,7 +15,7 @@ interface Props {
 
 export const AssetsTable: FC<Props> = ({ assets }) => {
   const [assetsPrices, setAssetsPrices] = useState(reduceAssetsPrices(assets))
-  const [assetsToHighlight, setAssetsToHighlight] = useState<Record<string, 'up' | 'down'>>({})
+  const [rowsToHighlight, setRowsToHighlight] = useState<Record<string, 'up' | 'down'>>({})
   const [order, setOrder] = useState<number>(1)
   const [filter] = useState<string>('')
 
@@ -23,7 +23,7 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
     url: `${WS_URL}/prices?assets=${assets.map(({ id }) => id).join(',')}`,
     onMessage: message => {
       const pricesToUpdate = JSON.parse(message.data)
-      setAssetsToHighlight(reduceAssetsToHighlight(assetsPrices, pricesToUpdate))
+      setRowsToHighlight(reduceAssetsToHighlight(assetsPrices, pricesToUpdate))
       setAssetsPrices(prev => ({ ...prev, ...pricesToUpdate }))
     }
   })
@@ -55,8 +55,8 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
   const filteredAssets = filterAssets()
 
   const rowBackgrounAnimations = {
-    up: 'animate-price-up',
-    down: 'animate-price-down'
+    up: 'animate-row-price-up',
+    down: 'animate-row-price-down'
   }
 
   return (
@@ -108,7 +108,7 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
               aria-rowindex={parseInt(asset.rank)}
               key={asset.name}
               className={`border-b border-gray-200 transition-all hover:bg-orange-100 ${
-                asset.id in assetsToHighlight && rowBackgrounAnimations[assetsToHighlight[asset.id]]
+                asset.id in rowsToHighlight && rowBackgrounAnimations[rowsToHighlight[asset.id]]
               }`}
             >
               <Td

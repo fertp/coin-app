@@ -7,18 +7,28 @@
     /* border: 1px solid cyan; */
   }
 
-  .animate-price-up {
-    animation-name: price-up;
+  .animate-row-price-up {
+    animation-name: row-price-up;
     animation-duration: 500ms;
   }
 
-  .animate-price-down {
-    animation-name: price-down;
+  .animate-row-price-down {
+    animation-name: row-price-down;
+    animation-duration: 500ms;
+  }
+
+  .animate-text-price-up {
+    animation-name: text-price-up;
+    animation-duration: 500ms;
+  }
+
+  .animate-text-price-down {
+    animation-name: text-price-down;
     animation-duration: 500ms;
   }
 }
 
-@keyframes price-up {
+@keyframes row-price-up {
   0% {
     @apply bg-transparent;
   }
@@ -30,7 +40,7 @@
   }
 }
 
-@keyframes price-down {
+@keyframes row-price-down {
   0% {
     @apply bg-transparent;
   }
@@ -39,5 +49,29 @@
   }
   100% {
     @apply bg-transparent;
+  }
+}
+
+@keyframes text-price-up {
+  0% {
+    @apply text-current;
+  }
+  25% {
+    @apply text-green-500;
+  }
+  100% {
+    @apply text-current;
+  }
+}
+
+@keyframes text-price-down {
+  0% {
+    @apply text-current;
+  }
+  25% {
+    @apply text-red-400;
+  }
+  100% {
+    @apply text-current;
   }
 }

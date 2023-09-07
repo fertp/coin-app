@@ -1,9 +1,10 @@
-import { useState, type FC } from 'react'
+import { useState, type FC, useRef } from 'react'
 import { formatter } from '../../../utils/formatter'
 import { useGetAssetByIdQuery, useGetAssetHistoryQuery } from '@/services/api'
 import { useAppSelector } from '@/app/hooks'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { WS_URL } from '@/data/constants'
+import { addAnimationClassName, removeAnimationClassName } from '../utils/handleAnimationClassName'
 
 interface Props {
   id: string
@@ -17,10 +18,23 @@ export const Stats: FC<Props> = ({ id }) => {
   const { data: assetData } = useGetAssetByIdQuery(id)
   const { data: historyData } = useGetAssetHistoryQuery({ id, timeRange })
 
+  const listRef = useRef<HTMLUListElement>(null)
+
   useWebSocket({
     url: `${WS_URL}/prices?assets=${id}`,
     onMessage: message => {
-      setAssetPrice(JSON.parse(message.data)[id])
+      const newPrice = JSON.parse(message.data)[id]
+      const element = listRef.current?.querySelector('li[data-name="Price"]')
+
+      removeAnimationClassName(element)
+
+      setAssetPrice(prev => {
+        if (prev !== newPrice) {
+          const direction = newPrice > prev ? 'up' : 'down'
+          addAnimationClassName(element, direction)
+        }
+        return newPrice
+      })
     }
   })
 
@@ -61,12 +75,14 @@ export const Stats: FC<Props> = ({ id }) => {
   return (
     <div>
       <ul
+        ref={listRef}
         aria-label={`${asset?.name} stats`}
         className='grid max-w-xs grid-cols-2 gap-x-8 gap-y-4 sm:max-w-sm sm:grid-cols-3 md:max-w-none'
       >
         {items.map(({ name, value }) => (
           <li
             key={name}
+            data-name={name}
             className='flex items-center'
           >
             <span className='mr-4 text-xs uppercase text-gray-600'>{name}</span>
