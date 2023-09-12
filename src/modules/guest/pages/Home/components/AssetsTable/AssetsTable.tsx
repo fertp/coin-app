@@ -1,4 +1,4 @@
-import { useEffect, type FC } from 'react'
+import { useEffect, type FC, useRef } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Table, Th, Td, Thead, ActionButton } from '@/modules/guest/components'
@@ -7,7 +7,10 @@ import { formatter } from '../../../../utils/formatter'
 import { COLUMN_HEADERS } from './constants'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { WS_URL } from '@/data/constants'
-import { reduceAssetsPrices, reduceAssetsToHighlight } from './utils'
+import { addAnimationClassName, reduceAssetsPrices, removeAnimationClassName } from './utils'
+import { StarIcon } from '@/modules/guest/components/ui/StarIcon'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { toggleFavoriteAsset } from '@/modules/guest/slices/favoriteAssetSlice'
 
 interface Props {
   assets: Asset[]
@@ -15,16 +18,32 @@ interface Props {
 
 export const AssetsTable: FC<Props> = ({ assets }) => {
   const [assetsPrices, setAssetsPrices] = useState(reduceAssetsPrices(assets))
-  const [assetsToHighlight, setAssetsToHighlight] = useState<Record<string, 'up' | 'down'>>({})
   const [order, setOrder] = useState<number>(1)
   const [filter] = useState<string>('')
+
+  const { favoriteIds } = useAppSelector(state => state.favoriteAssets)
+  const dispatch = useAppDispatch()
+
+  const tbodyRef = useRef<HTMLTableSectionElement>(null)
 
   useWebSocket({
     url: `${WS_URL}/prices?assets=${assets.map(({ id }) => id).join(',')}`,
     onMessage: message => {
-      const pricesToUpdate = JSON.parse(message.data)
-      setAssetsToHighlight(reduceAssetsToHighlight(assetsPrices, pricesToUpdate))
-      setAssetsPrices(prev => ({ ...prev, ...pricesToUpdate }))
+      const newPrices = JSON.parse(message.data)
+      const tableRows = tbodyRef.current?.querySelectorAll('tr')
+      tableRows?.forEach(row => {
+        removeAnimationClassName(row)
+      })
+
+      setAssetsPrices(prev => {
+        tableRows?.forEach(row => {
+          if (row.dataset.id !== undefined && row.dataset.id in newPrices) {
+            const direction = newPrices[row.dataset.id] > prev[row.dataset.id] ? 'up' : 'down'
+            addAnimationClassName(row, direction)
+          }
+        })
+        return { ...prev, ...newPrices }
+      })
     }
   })
 
@@ -54,16 +73,12 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
 
   const filteredAssets = filterAssets()
 
-  const rowBackgrounAnimations = {
-    up: 'animate-price-up',
-    down: 'animate-price-down'
-  }
-
   return (
     <Table ariaLabel='Assets list'>
       <colgroup>
         <col />
         <col className='min-w-fit' />
+        <col />
         <col />
         <col />
         <col />
@@ -98,18 +113,19 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
           <span>(24Hr)</span>
         </Th>
 
+        <Th>Fav</Th>
+
         <Th displayFrom='md'>&nbsp;</Th>
       </Thead>
 
-      <tbody>
+      <tbody ref={tbodyRef}>
         {filteredAssets.map(asset => {
           return (
             <tr
               aria-rowindex={parseInt(asset.rank)}
               key={asset.name}
-              className={`border-b border-gray-200 transition-all hover:bg-orange-100 ${
-                asset.id in assetsToHighlight && rowBackgrounAnimations[assetsToHighlight[asset.id]]
-              }`}
+              className='border-b border-gray-200 transition-all hover:bg-orange-100'
+              data-id={asset.id}
             >
               <Td
                 align='center'
@@ -148,6 +164,16 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
                 {formatter.toPercentage({
                   value: Number(asset.changePercent24Hr)
                 })}
+              </Td>
+
+              <Td>
+                <span className='mx-auto flex justify-center'>
+                  <StarIcon
+                    role='button'
+                    isFilled={favoriteIds.includes(asset.id)}
+                    onClick={() => dispatch(toggleFavoriteAsset(asset.id))}
+                  />
+                </span>
               </Td>
 
               <Td displayFrom='md'>

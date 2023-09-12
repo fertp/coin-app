@@ -22,6 +22,10 @@ export const coincapApi = createApi({
       query: id => `/assets/${id}`
     }),
 
+    getFavoriteAssets: builder.query<{ data: Asset[] }, Array<Asset['id']>>({
+      query: ids => ({ url: '/assets', params: { ids } })
+    }),
+
     getAssetHistory: builder.query<{ data: AssetHistory[] }, { id: string; timeRange: timeRange }>({
       query: ({ id, timeRange }) => {
         const { interval, start, end } = getHistoryParams(timeRange)
@@ -63,6 +67,7 @@ export const coincapApi = createApi({
 export const {
   useGetAssetsQuery,
   useGetAssetByIdQuery,
+  useGetFavoriteAssetsQuery,
   useGetAssetHistoryQuery,
   useGetAssetMarketsQuery,
   useGetExchangesQuery,

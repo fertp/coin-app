@@ -1,12 +1,16 @@
 import type { FC } from 'react'
-import { Container, Loader } from '../../components'
+import { Button, Container, Loader } from '../../components'
 import { useParams } from 'react-router-dom'
 import { Stats, Title, Chart, MarketsTable, IntervalButtons } from './components'
 import { useGetAssetByIdQuery, useGetAssetHistoryQuery } from '@/services/api'
-import { useAppSelector } from '@/app/hooks'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { toggleFavoriteAsset } from '../../slices/favoriteAssetSlice'
 
 export const Coin: FC = () => {
   const { id } = useParams()
+
+  const dispatch = useAppDispatch()
+  const { favoriteIds } = useAppSelector(state => state.favoriteAssets)
 
   if (id === undefined) {
     return (
@@ -51,6 +55,16 @@ export const Coin: FC = () => {
           <Title asset={assetQuery.data?.data} />
 
           <Stats id={id} />
+
+          <div className='flex xl:order-last xl:flex-grow xl:justify-end'>
+            <Button
+              onClick={() => {
+                dispatch(toggleFavoriteAsset(id))
+              }}
+            >
+              {!favoriteIds.includes(id) ? 'Add to' : 'Remove from'} favorites
+            </Button>
+          </div>
         </div>
 
         <Chart id={id} />

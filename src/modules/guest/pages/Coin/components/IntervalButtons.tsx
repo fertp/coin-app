@@ -28,7 +28,7 @@ export const IntervalButtons: FC<Props> = ({ id }) => {
           ariaLabel={labelsMap[item]}
           selected={timeRange === item}
           className='relative'
-          handleClick={() => dispatch(setTimeRange(item))}
+          onClick={() => dispatch(setTimeRange(item))}
         >
           <>
             {timeRange === item && isFetching && (
