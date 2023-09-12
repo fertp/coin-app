@@ -113,7 +113,7 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
           <span>(24Hr)</span>
         </Th>
 
-        <Th>Fav</Th>
+        <Th align='center'>Fav</Th>
 
         <Th displayFrom='md'>&nbsp;</Th>
       </Thead>
@@ -166,8 +166,8 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
                 })}
               </Td>
 
-              <Td>
-                <span className='mx-auto flex justify-center'>
+              <Td align='center'>
+                <span className='inline-block'>
                   <StarIcon
                     role='button'
                     isFilled={favoriteIds.includes(asset.id)}

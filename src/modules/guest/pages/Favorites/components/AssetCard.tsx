@@ -23,6 +23,7 @@ export const AssetCard: FC<Props> = ({ asset }) => {
   const [assetPrice, setAssetPrice] = useState(0)
 
   const SOCKET_MESAGGE_DELAYED_MILLISECONDS = 3000
+  const MAX_PRICES_LENGTH = 12
 
   const enqueueFunction = useQueuedFunction()
 
@@ -33,26 +34,27 @@ export const AssetCard: FC<Props> = ({ asset }) => {
   useWebSocket({
     url: `${WS_URL}/prices?assets=${asset.id}`,
     onMessage: message => {
-      const newPrice = JSON.parse(message.data)[asset.id]
       enqueueFunction(() => {
-        setAssetPrice(newPrice)
+        const newPrice = JSON.parse(message.data)[asset.id]
 
         removeAnimationClassName(priceElementRef.current)
 
         setLastAssetPrices(prev => {
           if (prev !== newPrice) {
-            const direction = newPrice > prev ? 'up' : 'down'
+            const direction = newPrice > prev[prev.length - 1] ? 'up' : 'down'
             addAnimationClassName(priceElementRef.current, direction)
           }
 
           const assetPrices = [...prev, newPrice]
 
-          if (assetPrices.length > 12) {
-            return assetPrices.splice(assetPrices.length - 12)
+          if (assetPrices.length > MAX_PRICES_LENGTH) {
+            return assetPrices.splice(assetPrices.length - MAX_PRICES_LENGTH)
           }
 
           return assetPrices
         })
+
+        setAssetPrice(newPrice)
       }, SOCKET_MESAGGE_DELAYED_MILLISECONDS)
     }
   })

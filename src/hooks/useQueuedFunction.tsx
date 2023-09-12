@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-type QueuedFunction = (callback: () => void, milliseconds: number) => void
+type QueuedFunction = (cb: () => void, ms: number) => void
 
 export const useQueuedFunction = (): QueuedFunction => {
   const isDelayed = useRef(false)
@@ -11,18 +11,19 @@ export const useQueuedFunction = (): QueuedFunction => {
       isDelayed.current = true
       callback()
 
-      function executeQueuedFunction(): void {
+      function delayExecution(): void {
         setTimeout(() => {
           if (queue.current.length > 0) {
-            queue.current[0]()
+            const lastCallback = queue.current[queue.current.length - 1]
+            lastCallback()
             queue.current.length = 0
-            executeQueuedFunction()
+            delayExecution()
             return
           }
           isDelayed.current = false
         }, milliseconds)
       }
-      executeQueuedFunction()
+      delayExecution()
     } else {
       queue.current.push(callback)
     }
