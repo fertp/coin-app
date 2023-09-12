@@ -5,6 +5,7 @@ import { useAppSelector } from '@/app/hooks'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { WS_URL } from '@/data/constants'
 import { addAnimationClassName, removeAnimationClassName } from '../utils/handleAnimationClassName'
+import { useQueuedFunction } from '@/hooks/useQueuedFunction'
 
 interface Props {
   id: string
@@ -20,21 +21,28 @@ export const Stats: FC<Props> = ({ id }) => {
 
   const listRef = useRef<HTMLUListElement>(null)
 
+  const SOCKET_MESAGGE_DELAYED_MILLISECONDS = 2000
+
+  const enqueueFunction = useQueuedFunction()
+
   useWebSocket({
     url: `${WS_URL}/prices?assets=${id}`,
     onMessage: message => {
-      const newPrice = JSON.parse(message.data)[id]
-      const element = listRef.current?.querySelector('li[data-name="Price"]')
+      enqueueFunction(() => {
+        console.log(new Date().getSeconds())
+        const newPrice = JSON.parse(message.data)[id]
+        const element = listRef.current?.querySelector('li[data-name="Price"]')
 
-      removeAnimationClassName(element)
+        removeAnimationClassName(element)
 
-      setAssetPrice(prev => {
-        if (prev !== newPrice) {
-          const direction = newPrice > prev ? 'up' : 'down'
-          addAnimationClassName(element, direction)
-        }
-        return newPrice
-      })
+        setAssetPrice(prev => {
+          if (prev !== newPrice) {
+            const direction = newPrice > prev ? 'up' : 'down'
+            addAnimationClassName(element, direction)
+          }
+          return newPrice
+        })
+      }, SOCKET_MESAGGE_DELAYED_MILLISECONDS)
     }
   })
 

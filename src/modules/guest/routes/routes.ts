@@ -3,6 +3,7 @@ import { Coin } from '../pages/Coin'
 import { Exchanges } from '../pages/Exchanges'
 import { Exchange } from '../pages/Exchange'
 import type { Route } from '@/types'
+import { Favorites } from '../pages/Favorites'
 
 export const routes: Route[] = [
   {
@@ -18,7 +19,7 @@ export const routes: Route[] = [
     name: 'Coin'
   },
   {
-    path: '/exchanges',
+    path: 'exchanges',
     to: '/exchanges',
     Element: Exchanges,
     name: 'Exchanges'
@@ -28,5 +29,17 @@ export const routes: Route[] = [
     to: null,
     Element: Exchange,
     name: 'Coin'
+  },
+  {
+    path: 'favorites',
+    to: '/favorites',
+    Element: Favorites,
+    name: 'Favorites'
   }
+  // {
+  //   path: 'about',
+  //   to: '/about',
+  //   Element: About,
+  //   name: 'About'
+  // }
 ]

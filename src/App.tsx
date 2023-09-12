@@ -1,7 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { PublicLayout, publicRoutes } from './modules/guest'
+import { useFavoriteAssetsStorage } from './hooks/useFavoriteAssetsStorage'
 
 export default function App(): JSX.Element {
+  useFavoriteAssetsStorage()
+
   return (
     <BrowserRouter>
       <Routes>

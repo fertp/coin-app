@@ -36,7 +36,7 @@ export const Home: FC = () => {
         />
       ) : (
         <Button
-          handleClick={handleViewMore}
+          onClick={handleViewMore}
           className='mx-auto mt-12'
         >
           View More

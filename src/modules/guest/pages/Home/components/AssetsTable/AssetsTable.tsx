@@ -8,6 +8,9 @@ import { COLUMN_HEADERS } from './constants'
 import { useWebSocket } from '@/hooks/useWebSocket'
 import { WS_URL } from '@/data/constants'
 import { addAnimationClassName, reduceAssetsPrices, removeAnimationClassName } from './utils'
+import { StarIcon } from '@/modules/guest/components/ui/StarIcon'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { toggleFavoriteAsset } from '@/modules/guest/slices/favoriteAssetSlice'
 
 interface Props {
   assets: Asset[]
@@ -17,6 +20,9 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
   const [assetsPrices, setAssetsPrices] = useState(reduceAssetsPrices(assets))
   const [order, setOrder] = useState<number>(1)
   const [filter] = useState<string>('')
+
+  const { favoriteIds } = useAppSelector(state => state.favoriteAssets)
+  const dispatch = useAppDispatch()
 
   const tbodyRef = useRef<HTMLTableSectionElement>(null)
 
@@ -77,6 +83,7 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
         <col />
         <col />
         <col />
+        <col />
       </colgroup>
 
       <Thead>
@@ -105,6 +112,8 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
           <span className='hidden sm:inline'>{COLUMN_HEADERS.CHANGE}&nbsp;</span>
           <span>(24Hr)</span>
         </Th>
+
+        <Th>Fav</Th>
 
         <Th displayFrom='md'>&nbsp;</Th>
       </Thead>
@@ -155,6 +164,16 @@ export const AssetsTable: FC<Props> = ({ assets }) => {
                 {formatter.toPercentage({
                   value: Number(asset.changePercent24Hr)
                 })}
+              </Td>
+
+              <Td>
+                <span className='mx-auto flex justify-center'>
+                  <StarIcon
+                    role='button'
+                    isFilled={favoriteIds.includes(asset.id)}
+                    onClick={() => dispatch(toggleFavoriteAsset(asset.id))}
+                  />
+                </span>
               </Td>
 
               <Td displayFrom='md'>
