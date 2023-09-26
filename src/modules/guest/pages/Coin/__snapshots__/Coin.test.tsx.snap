@@ -39,7 +39,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               <span
                 class="mt-2 text-gray-500"
               >
-                25 August 2023
+                26 September 2023
               </span>
             </div>
           </div>
@@ -50,6 +50,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
             >
               <li
                 class="flex items-center"
+                data-name="Rank"
               >
                 <span
                   class="mr-4 text-xs uppercase text-gray-600"
@@ -62,6 +63,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               </li>
               <li
                 class="flex items-center"
+                data-name="Price"
               >
                 <span
                   class="mr-4 text-xs uppercase text-gray-600"
@@ -74,6 +76,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               </li>
               <li
                 class="flex items-center"
+                data-name="High"
               >
                 <span
                   class="mr-4 text-xs uppercase text-gray-600"
@@ -86,6 +89,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               </li>
               <li
                 class="flex items-center"
+                data-name="Low"
               >
                 <span
                   class="mr-4 text-xs uppercase text-gray-600"
@@ -98,6 +102,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               </li>
               <li
                 class="flex items-center"
+                data-name="Average"
               >
                 <span
                   class="mr-4 text-xs uppercase text-gray-600"
@@ -110,6 +115,7 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               </li>
               <li
                 class="flex items-center"
+                data-name="Change"
               >
                 <span
                   class="mr-4 text-xs uppercase text-gray-600"
@@ -122,10 +128,25 @@ exports[`Coin page > When it mounts by default with a valid id param > Should re
               </li>
             </ul>
           </div>
+          <div
+            class="flex xl:order-last xl:flex-grow xl:justify-end"
+          >
+            <button
+              class="block rounded border border-orange-500 py-1 px-2 font-semibold hover:border-transparent hover:bg-orange-500 hover:text-white  bg-transparent text-orange-700 undefined"
+            >
+              Add to
+               favorites
+            </button>
+          </div>
         </div>
         <div
           class="mt-8 md:mt-12"
-        />
+        >
+          <img
+            alt="last day asset history chart"
+            src="canvas"
+          />
+        </div>
         <div
           aria-label="Select an interval"
           class="mt-4 flex gap-2"

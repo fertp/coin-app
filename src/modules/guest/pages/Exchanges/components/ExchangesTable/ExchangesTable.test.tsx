@@ -72,7 +72,6 @@ describe('ExchangesTable component', () => {
       const exchange = fakeExchanges[0]
 
       render(<Component exchanges={[exchange]} />)
-      screen.debug()
       const linkButton = screen.getByRole('link', { name: `Go to ${exchange.name} page` })
       expect(linkButton).toBeInTheDocument()
       expect(linkButton).toHaveAttribute('href', `/exchanges/${exchange.exchangeId}`)

@@ -61,6 +61,12 @@ const handlers = [
   /** getExchangeMarkets */
   rest.get(`${API_URL}/markets`, (req, res, ctx) => {
     return res(ctx.json({ data: fakeExchangeMarkets }), ctx.delay(REQUEST_DELAY))
+  }),
+
+  /** ws:prices */
+  /** @todo Implement mock-socket */
+  rest.get('https://ws.coincap.io/prices', (_, res, ctx) => {
+    res.networkError('Error')
   })
 ]
 

@@ -1,36 +1,33 @@
 import type { RenderResult } from '@testing-library/react'
-import { store } from '@/app/store'
-import { Provider } from 'react-redux'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { Exchange } from './Exchange'
-import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
+import { act, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
 import { server } from '@/test/mock/server'
 import { rest } from 'msw'
 import { API_URL } from '@/data/constants'
 import fakeExchanges from '@/test/fakeData/fakeExchanges.json'
+import { renderWithProviders } from '@/test/renderWithProviders'
 
 const fakeExchange = fakeExchanges[0]
 
 const Component = (): JSX.Element => {
   const route = `/exchanges/${fakeExchange?.exchangeId}`
   return (
-    <Provider store={store}>
-      <MemoryRouter initialEntries={[route]}>
-        <Routes>
-          <Route
-            path='exchanges/:id'
-            element={<Exchange />}
-          />
-        </Routes>
-      </MemoryRouter>
-    </Provider>
+    <MemoryRouter initialEntries={[route]}>
+      <Routes>
+        <Route
+          path='exchanges/:id'
+          element={<Exchange />}
+        />
+      </Routes>
+    </MemoryRouter>
   )
 }
 
 const renderByDefault = async (): Promise<RenderResult> => {
   let wrapper
   await act(async () => {
-    wrapper = render(<Component />)
+    wrapper = renderWithProviders(<Component />)
   })
 
   if (wrapper === undefined) throw new Error('Component could not be rendered')
@@ -43,12 +40,10 @@ describe('Exchange page', () => {
     it('Should display an error message', async () => {
       server.use(
         rest.get(`${API_URL}/exchanges/:id`, (req, res, ctx) => {
-          console.log('/exchanges/:id')
           res.networkError('Failed to connect')
         }),
 
         rest.get(`${API_URL}/markets`, (req, res, ctx) => {
-          console.log('/markets')
           res.networkError('Failed to connect')
         })
       )

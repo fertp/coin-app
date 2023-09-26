@@ -71,8 +71,6 @@ describe('MarketsTable component', () => {
 
       render(<Component markets={[fakeMarket]} />)
 
-      screen.debug()
-
       expect(screen.getByRole('cell', { name: expectedPriceQuote })).toBeInTheDocument()
       expect(screen.getByRole('cell', { name: expectedPriceUSD })).toBeInTheDocument()
       expect(screen.getByRole('cell', { name: expectedVolume24hr })).toBeInTheDocument()

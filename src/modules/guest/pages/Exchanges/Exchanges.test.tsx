@@ -3,31 +3,20 @@ import { server } from '@/test/mock/server'
 import { rest } from 'msw'
 import { Exchanges } from './Exchanges'
 import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { store } from '@/app/store'
-import {
-  act,
-  render,
-  waitFor,
-  type RenderResult,
-  screen,
-  waitForElementToBeRemoved,
-  getAllByRole
-} from '@testing-library/react'
+import { act, waitFor, type RenderResult, screen, waitForElementToBeRemoved, getAllByRole } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { renderWithProviders } from '@/test/renderWithProviders'
 
 const Component = (): JSX.Element => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Exchanges />
-    </BrowserRouter>
-  </Provider>
+  <BrowserRouter>
+    <Exchanges />
+  </BrowserRouter>
 )
 
 const renderByDefault = async (): Promise<RenderResult> => {
   let wrapper
   await act(async () => {
-    wrapper = render(<Component />)
+    wrapper = renderWithProviders(<Component />)
   })
 
   if (wrapper === undefined) throw new Error('Component could not be rendered')
@@ -37,7 +26,7 @@ const renderByDefault = async (): Promise<RenderResult> => {
 
 const renderAndClickViewMoreButton = async (): Promise<void> => {
   await act(async () => {
-    render(<Component />)
+    renderWithProviders(<Component />)
   })
   await screen.findByRole('table', { name: /exchanges list/i })
   await userEvent.click(screen.getByRole('button', { name: /view more/i }))
@@ -77,7 +66,7 @@ describe('Exchanges page', () => {
 
     it('Should render a button with "view more" text', async () => {
       await renderByDefault()
-      expect(screen.getByRole('button', { name: /view more/i })).toBeInTheDocument()
+      expect(await screen.findByRole('button', { name: /view more/i })).toBeInTheDocument()
     })
   })
 
@@ -105,10 +94,7 @@ describe('Exchanges page', () => {
     /** @todo Fix this test */
     it('Should fetch twenty new assets, hide spinner and render new ones below the initial ones', async () => {
       await renderAndClickViewMoreButton()
-      // expect(screen.getByRole('status', { name: /loading/i })).toBeInTheDocument()
-      await waitFor(() => {
-        expect(screen.queryByRole('status', { name: /loading/i })).not.toBeInTheDocument()
-      })
+      await waitForElementToBeRemoved(() => screen.queryByRole('status', { name: /loading/i }))
       const table = screen.getByRole('table', { name: /exchanges list/i })
       const rows = getAllByRole(table, 'row')
       expect(rows.length).toBe(40 + 1)

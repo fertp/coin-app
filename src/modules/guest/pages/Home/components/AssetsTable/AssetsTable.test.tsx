@@ -1,10 +1,11 @@
 import type { Asset } from '@/types'
 import fakeData from '@/test/fakeData/fakeAssets.json'
-import { getAllByRole, getByRole, render, screen } from '@testing-library/react'
+import { getAllByRole, getByRole, screen } from '@testing-library/react'
 import { AssetsTable } from './AssetsTable'
 import { BrowserRouter } from 'react-router-dom'
 import { COLUMN_HEADERS } from './constants'
 import userEvent from '@testing-library/user-event'
+import { renderWithProviders } from '@/test/renderWithProviders'
 
 const ASSETS_COUNT = 5
 const fakeAssets: Asset[] = fakeData.slice(0, ASSETS_COUNT)
@@ -18,7 +19,7 @@ const Component = ({ assets }: { assets: Asset[] }): JSX.Element => (
 describe('AssetsTable component', () => {
   describe('When it mounts by default', () => {
     it('Should correctly render a row for every asset received by props', () => {
-      render(<Component assets={fakeAssets} />)
+      renderWithProviders(<Component assets={fakeAssets} />)
       const table = screen.getByRole('table', { name: /assets list/i })
       const rowGroups = getAllByRole(table, 'rowgroup')
       const { 1: tableBody } = rowGroups
@@ -27,7 +28,7 @@ describe('AssetsTable component', () => {
     })
 
     it('Should correctly render all column headers', () => {
-      render(<Component assets={fakeAssets} />)
+      renderWithProviders(<Component assets={fakeAssets} />)
       expect(screen.getByText(COLUMN_HEADERS.RANK, { exact: false })).toBeInTheDocument()
       expect(screen.getByRole('columnheader', { name: COLUMN_HEADERS.NAME })).toBeInTheDocument()
       expect(screen.getByRole('columnheader', { name: COLUMN_HEADERS.PRICE })).toBeInTheDocument()
@@ -36,7 +37,7 @@ describe('AssetsTable component', () => {
     })
 
     it('Should correctly render asset data in cells', () => {
-      render(<Component assets={fakeAssets} />)
+      renderWithProviders(<Component assets={fakeAssets} />)
       const table = screen.getByRole('table', { name: /assets list/i })
       const rowGroups = getAllByRole(table, 'rowgroup')
       const { 1: tableBody } = rowGroups
@@ -53,7 +54,7 @@ describe('AssetsTable component', () => {
       const expectedMarketCap = '$233.50m'
       const expectedchangePercent = '-0.75%'
 
-      render(<Component assets={[fakeAssets[0]]} />)
+      renderWithProviders(<Component assets={[fakeAssets[0]]} />)
 
       expect(screen.getByRole('cell', { name: expectedPrice }))
       expect(screen.getByRole('cell', { name: expectedMarketCap }))
@@ -62,13 +63,13 @@ describe('AssetsTable component', () => {
 
     it('Should render a button to change assets order', () => {
       const buttonText = /sort assets ascendent/i
-      render(<Component assets={fakeAssets} />)
+      renderWithProviders(<Component assets={fakeAssets} />)
       expect(screen.getByRole('button', { name: buttonText })).toBeInTheDocument()
     })
 
     describe('When the user clicks on the sort button', () => {
       it('Should invert the order of the assets', async () => {
-        render(<Component assets={fakeAssets} />)
+        renderWithProviders(<Component assets={fakeAssets} />)
         const table = screen.getByRole('table', { name: /assets list/i })
         const rowGroups = getAllByRole(table, 'rowgroup')
         const { 1: tableBody } = rowGroups

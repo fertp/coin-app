@@ -29,7 +29,6 @@ export const Stats: FC<Props> = ({ id }) => {
     url: `${WS_URL}/prices?assets=${id}`,
     onMessage: message => {
       enqueueFunction(() => {
-        console.log(new Date().getSeconds())
         const newPrice = JSON.parse(message.data)[id]
         const element = listRef.current?.querySelector('li[data-name="Price"]')
 

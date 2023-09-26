@@ -29,7 +29,6 @@ export const favoriteAssetsSlice = createSlice({
 
     toggleFavoriteAsset: (state, action: PayloadAction<Asset['id']>) => {
       if (state.favoriteIds.includes(action.payload)) {
-        console.log('toggleFavoriteAsset > if')
         state.favoriteIds = state.favoriteIds.filter(id => id !== action.payload)
       } else {
         state.favoriteIds.push(action.payload)

@@ -1,26 +1,23 @@
 import type { RenderResult } from '@testing-library/react'
-import { act, getAllByRole, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
+import { act, getAllByRole, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
 import { Home } from './Home'
-import { Provider } from 'react-redux'
-import { store } from '@/app/store'
 import { rest } from 'msw'
 import { API_URL } from '@/data/constants'
 import { BrowserRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
 import { server } from '@/test/mock/server'
+import { renderWithProviders } from '@/test/renderWithProviders'
 
 const Component = (): JSX.Element => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Home />
-    </BrowserRouter>
-  </Provider>
+  <BrowserRouter>
+    <Home />
+  </BrowserRouter>
 )
 
 const renderByDefault = async (): Promise<RenderResult> => {
   let wrapper
   await act(async () => {
-    wrapper = render(<Component />)
+    wrapper = renderWithProviders(<Component />)
   })
 
   if (wrapper === undefined) throw new Error('Component could not be rendered')
@@ -30,7 +27,7 @@ const renderByDefault = async (): Promise<RenderResult> => {
 
 const renderAndClickViewMoreButton = async (): Promise<void> => {
   await act(async () => {
-    render(<Component />)
+    renderWithProviders(<Component />)
   })
   await screen.findByRole('table', { name: /assets list/i })
   await userEvent.click(screen.getByRole('button', { name: /view more/i }))
@@ -70,7 +67,7 @@ describe('Home page', () => {
 
     it('Should render a button with "view more" text', async () => {
       await renderByDefault()
-      expect(screen.getByRole('button', { name: /view more/i })).toBeInTheDocument()
+      expect(await screen.findByRole('button', { name: /view more/i })).toBeInTheDocument()
     })
   })
 
@@ -85,23 +82,16 @@ describe('Home page', () => {
       expect(screen.getByRole('status', { name: /loading/i })).toBeInTheDocument()
     })
 
-    /** @todo Fix this test */
     it('Should display the "view more" button again, when new assets have been fetched', async () => {
       await renderAndClickViewMoreButton()
-      // expect(screen.getByRole('status', { name: /loading/i })).toBeInTheDocument()
-      await waitFor(() => {
-        expect(screen.queryByRole('status', { name: /loading/i })).not.toBeInTheDocument()
-      })
+      await waitForElementToBeRemoved(() => screen.queryByRole('status', { name: /loading/i }))
       expect(screen.getByRole('button', { name: /view more/i })).toBeInTheDocument()
     })
 
     /** @todo Fix this test */
     it('Should fetch twenty new assets, hide spinner and render new ones below the initial ones', async () => {
       await renderAndClickViewMoreButton()
-      // expect(screen.getByRole('status', { name: /loading/i })).toBeInTheDocument()
-      await waitFor(() => {
-        expect(screen.queryByRole('status', { name: /loading/i })).not.toBeInTheDocument()
-      })
+      await waitForElementToBeRemoved(() => screen.queryByRole('status', { name: /loading/i }))
       const table = screen.getByRole('table', { name: /assets list/i })
       const rows = getAllByRole(table, 'row')
       expect(rows.length).toBe(40 + 1)

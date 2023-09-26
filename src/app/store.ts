@@ -1,19 +1,28 @@
-import { configureStore } from '@reduxjs/toolkit'
+import type { PreloadedState } from '@reduxjs/toolkit'
+import type { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { coincapApi } from '@/services/api'
 import assetSlice from '@/modules/guest/slices/assetSlice'
-import { setupListeners } from '@reduxjs/toolkit/dist/query'
 import { favoriteAssetsSlice } from '@/modules/guest/slices/favoriteAssetSlice'
 
-export const store = configureStore({
-  reducer: {
-    [coincapApi.reducerPath]: coincapApi.reducer,
-    asset: assetSlice,
-    favoriteAssets: favoriteAssetsSlice.reducer
-  },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(coincapApi.middleware)
+const rootReducer = combineReducers({
+  [coincapApi.reducerPath]: coincapApi.reducer,
+  asset: assetSlice,
+  favoriteAssets: favoriteAssetsSlice.reducer
 })
 
-setupListeners(store.dispatch)
+export const setupStore = (preloadedState?: PreloadedState<RootState>): ToolkitStore => {
+  return configureStore({
+    reducer: {
+      [coincapApi.reducerPath]: coincapApi.reducer,
+      asset: assetSlice,
+      favoriteAssets: favoriteAssetsSlice.reducer
+    },
+    preloadedState,
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(coincapApi.middleware)
+  })
+}
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof rootReducer>
+export type AppStore = ReturnType<typeof setupStore>
+export type AppDispatch = AppStore['dispatch']
